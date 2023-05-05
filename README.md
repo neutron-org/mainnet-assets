@@ -13,13 +13,13 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 
 * **Reference binary**: [neutrond-linux-amd64](./neutrond-linux-amd64)
 * **Binary sha256sum**: `c463557529511436c6d865de1a13fd071fac4727d422f7194ddd5f22360821bf`
-* **Pre genesis file published with proposal _without CCV state_:** [neutron-1-pre-genesis-without-ccv.json](./neutron-1-pre-genesis-without-ccv.json), verify with `shasum -a 256 neutron-1-genesis-without-ccv.json`
+* **Pre genesis file published with proposal _without CCV state_:** [neutron-1-pre-genesis-without-ccv.json](./neutron-1-pre-genesis-without-ccv.json), verify with `shasum -a 256 neutron-1-pre-genesis-without-ccv.json`
 * **SHA256 for Pre genesis file _without CCV state_**: `4d897938a69a3809828e70f34c7400ec134817fe34ca4090dbe5991d72fa744c`
 
 
 * Genesis file hash
   * The SHA256 is used to verify against the genesis file (without CCV state) that the proposer has made available for review;
-  * The `neutron-1-genesis-without-ccv.json` file cannot be used to run the chain. Current pre genesis published in the proposal will not be used to generate final genesis, because of different configuration changes that was not available during proposal submission;
+  * The `nneutron-1-pre-genesis-without-ccv.json` file **cannot be used** to run the chain. Current pre genesis published in the proposal will not be used to generate final genesis, because of different configuration changes that was not available during proposal submission;
   * New pre genesis will be published in Friday;
   * The genesis file includes following slashin parameters, `signed_blocks_window` has been set to `140000`, and `min_signed_per_window` has been set to `5%`;
 * Binary hash
