@@ -29,7 +29,7 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 
 > Since [**Prop 792**](https://www.mintscan.io/cosmos/proposals/792) was published, Neutron released a new version, v1.0.0, which is going to be used for the mainnet launch. The only difference between v1.0.0-rc1, which was used in the proposal, and v1.0.0 is the upgrade of Interchain Security to the latest release, v1.2.1:
 >
-> https://github.com/octocat/linguist/compare/v1.0.0-rc1..v1.0.0
+> https://github.com/neutron-org/neutron/compare/v1.0.0-rc1..v1.0.0
 >
 >**All validators are required to use v1.0.0 during the mainnet launch. The instructions on how to bulid v1.0.0 can be found in the [How to Join](#how-to-join) section.**
 
