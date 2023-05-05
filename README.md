@@ -12,16 +12,19 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 * **Genesis file with CCV state:** [neutron-1-genesis.json](neutron-1-genesis.json)
 
 * **Reference binary**: [neutrond-linux-amd64](./neutrond-linux-amd64)
-* **Binary sha256sum**: `c463557529511436c6d865de1a13fd071fac4727d422f7194ddd5f22360821bf`
+* **Binary sha256sum**: `82b608543f2989c7c631d555767800e48f54ede389d193913136b41e5c3293ab`
 * **Pre genesis file published with proposal _without CCV state_:** [neutron-1-pre-genesis-without-ccv.json](./neutron-1-pre-genesis-without-ccv.json), verify with `shasum -a 256 neutron-1-pre-genesis-without-ccv.json`
-* **SHA256 for Pre genesis file _without CCV state_**: `4d897938a69a3809828e70f34c7400ec134817fe34ca4090dbe5991d72fa744c`
+* **SHA256 for pre genesis from proposal file _without CCV state_**: `4d897938a69a3809828e70f34c7400ec134817fe34ca4090dbe5991d72fa744c`
+
+* **Final genesis file _without CCV state_:** [neutron-1-pre-genesis-final-without-ccv.json](./neutron-1-pre-genesis-final-without-ccv.json), verify with `shasum -a 256 neutron-1-pre-genesis-final-without-ccv.json.json`
+* **SHA256 for final genesis file _without CCV state_**: `4d897938a69a3809828e70f34c7400ec134817fe34ca4090dbe5991d72fa744c`
 
 
 * Genesis file hash
   * The SHA256 is used to verify against the genesis file (without CCV state) that the proposer has made available for review;
-  * The `nneutron-1-pre-genesis-without-ccv.json` file **cannot be used** to run the chain. Current pre genesis published in the proposal will not be used to generate final genesis, because of different configuration changes that was not available during proposal submission;
-  * New pre genesis will be published in Friday;
-  * The genesis file includes following slashin parameters, `signed_blocks_window` has been set to `140000`, and `min_signed_per_window` has been set to `5%`;
+  * The `neutron-1-pre-genesis-without-ccv.json` file **cannot be used** to run the chain. Current pre genesis published in the proposal will not be used to generate final genesis, because of different configuration changes that was not available during proposal submission;
+  * The `neutron-1-pre-genesis-final-without-ccv.json` file cannot be used to run the chain: it must be updated with the CCV (Cross Chain Validation) state after the spawn time is reached;
+  * The genesis file includes following slashing parameters, `signed_blocks_window` has been set to `140000`, and `min_signed_per_window` has been set to `5%`;
 * Binary hash
   * The `neutrond-linux-amd64` binary is only provided to verify the SHA256. It was built with Interchain Security release [`v1.0.0`](https://github.com/neutron-org/neutron/releases/tag/v1.0.0). You can generate the binary following the build instructions in that repo.
 * Spawn time
@@ -86,7 +89,7 @@ You should see the following:
 name: neutron
 server_name: neutrond
 version: 1.0.0 
-commit: 8e8096053db83555495e07302cd951c60c6144d3
+commit: 2a9333c935b321cfa2cf213fb9adb38661d7f349
 
 ``` 
 
