@@ -44,11 +44,11 @@ The final `genesis.json` information is provided below:
 
 | Item                  | Description                                                      |
 |-----------------------|------------------------------------------------------------------|
-| **Genesis**           | [genesis.json](./neutron-1-genesis.json)                         | 
+| **Genesis**           | [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json)                         | 
 | **Checksum (sha256)** | 9496492c81b31befb59a4336d5ae4444c24b863721d21be143d7d4fdf8072c84 |
 
 
-**⚠️ All validators are required use the [genesis.json](./neutron-1-genesis.json) file provided in this instruction.**
+**⚠️ All validators are required use the [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json) file provided in this instruction.**
 
 If you want to get a better idea of what was changed in the genesis since Proposal 792, please read the sections below.
 
@@ -97,7 +97,7 @@ Neutron genesis instantiates dozens of smart contracts that are used by the Neut
 
 We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/genesis.sh) that you can copy to an empty directory and run to get the final genesis. We provide this script **for information purposes only**, and we do not guarantee that it will work on your machine (although if you have a Mac and the Docker daemon is running, it should produce the final `genesis.json` within approximately 30 minutes because it will build all the `wasm` binaries). 
 
-**⚠️ Please use the [genesis.json](./neutron-1-genesis.json) file provided above during the coordinated launch.**
+**⚠️ Please use the [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json) file provided above during the coordinated launch.**
 
 
 ## Endpoints
