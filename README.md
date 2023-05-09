@@ -4,6 +4,8 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 
 ## Parameters
 
+Below are the `neutron-1` chain parameters:
+
 | Name          | Value                 |
 |-----------|------------------|
 | Chain-ID  | `neutron-1`      |
