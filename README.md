@@ -41,7 +41,7 @@ The final `genesis.json` information is provided below:
 
 | Item         | Description                                             |
 |--------------|---------------------------------------------------------|
-| Genesis  |  | [genesis.json](neutron-1-genesis.json)| 
+| Genesis  |   [genesis.json](neutron-1-genesis.json)| 
 | Checksum (sha256) | b9c73221623ef35a2772babff3ce55ee95f8f8fed23a2efcefe1cb79cd092cf5 |
 
 
