@@ -2,7 +2,7 @@
 
 The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub network as provider chain.
 
-* Params:
+## Parameters
   * **Chain-ID**: `neutron-1`
   * **denom**: `untrn`
   * **minimum-gas-prices**: `0untrn`
@@ -10,37 +10,53 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
   * **genesis_time**: `2023-05-10T15:00:00.000000Z`
   * **Spawn time**: `2023-05-08T11:00:00Z`
     * Even if a proposal passes, the CCV state will not be available from the provider chain until after the spawn time is reached.
-* Binary:
+
+## Binary
+
+The Cosmos Hub was recently upgraded to [v9.1.0](https://github.com/cosmos/gaia/releases/tag/v9.1.0), which bumps ICS to [v1.1.0-multiden](https://github.com/cosmos/interchain-security/tree/v1.1.0-multiden). This version introduces two new parameters to prevent Replicated Security’s logic for handling rewards to be abused as a DOS vector.
+
+This required a release of a new version of Neutron, `v1.0.1`, which must be used for the mainnet launch. The only difference between `v1.0.0-rc1`, which was used in the proposal, and `v1.0.1` is the upgrade of Interchain Security to the latest release, `v1.2.0-multiden`: https://github.com/neutron-org/neutron/compare/v1.0.0-rc1..v1.0.1.
+
+**⚠️ All validators are required to use `v1.0.1` during the mainnet launch. The instructions on how to build `v1.0.1` can be found in the [How to Join](#how-to-join) section.**
+
   * **GitHub repo**: [neutron-org/neutron](https://github.com/neutron-org/neutron.git)
   * **Release**: [`v1.0.1`](https://github.com/neutron-org/neutron/releases/tag/v1.0.1)
   * **Reference binary**: [neutrond-linux-amd64](./neutrond-linux-amd64)
     * The `neutrond-linux-amd64` binary is only provided to verify the SHA256. It was built with Interchain Security release [`v1.0.1`](https://github.com/neutron-org/neutron/releases/tag/v1.0.1). You can generate the binary following the build instructions in that repo.
-  * **Binary sha256sum**: `82b608543f2989c7c631d555767800e48f54ede389d193913136b41e5c3293ab`
-* Genesis:
-  * **Genesis file with CCV state:** [neutron-1-genesis.json](neutron-1-genesis.json)
-    * **SHA256 `4d897938a69a3809828e70f34c7400ec134817fe34ca4090dbe5991d72fa744c`
-  * **Pre genesis file published with proposal _without CCV state_:** [neutron-1-pre-genesis-without-ccv.json](./neutron-1-pre-genesis-without-ccv.json), verify with `shasum -a 256 neutron-1-pre-genesis-without-ccv.json`
-    * **SHA256 `4d897938a69a3809828e70f34c7400ec134817fe34ca4090dbe5991d72fa744c`
-    * The `neutron-1-pre-genesis-without-ccv.json` file **cannot be used** to run the chain. Current pre genesis published in the proposal will not be used to generate final genesis, because of different configuration changes that was not available during proposal submission;
-  * **Final genesis file _without CCV state_:** [neutron-1-pre-genesis-final-without-ccv.json](./neutron-1-pre-genesis-final-without-ccv.json), verify with `shasum -a 256 neutron-1-pre-genesis-final-without-ccv.json.json`
-    * **SHA256 `4d897938a69a3809828e70f34c7400ec134817fe34ca4090dbe5991d72fa744c`
-    * The `neutron-1-pre-genesis-final-without-ccv.json` will be used to generate genesis file but it cannot be used to run the chain: it must be updated with the CCV (Cross Chain Validation) state after the spawn time is reached;
+  * **Binary sha256sum**: `82b608543f2989c7c631d555767800e48f54ede389d193913136b41e5c3293ab`.
+
+## Genesis
+
+ * **Genesis:** [genesis.json](neutron-1-genesis.json);
+ * **Checksum:** `b9c73221623ef35a2772babff3ce55ee95f8f8fed23a2efcefe1cb79cd092cf5`.
+
+This 
+
+1. The "ccvconsumer" section contains additional parameter due to upgrading ICS to [v1.1.0-multiden](https://github.com/cosmos/interchain-security/tree/v1.1.0-multiden);
+2. We updated the Neutron DAO and Neutron Token Generation Event `wasm` artifacts in the genesis;
+
+which bumps ICS to [v1.1.0-multiden](https://github.com/cosmos/interchain-security/tree/v1.1.0-multiden). This version introduces two new parameters to prevent Replicated Security’s logic for handling rewards to be abused as a DOS vector:
+
+The Cosmos Hub was recently upgraded to [v9.1.0](https://github.com/cosmos/gaia/releases/tag/v9.1.0), 
+
+- `rewards_denoms`: rewards denominations from the Consumer chain (e.g. uNTRN or IBC denoms used on the consumer chain)
+- `provider_rewards_denoms`: rewards denomination from the Provider chain (e.g. uATOM)
+
+> PLEASE MAKE SURE THAT YOU READ THE [Adding CCV parameters manually](#adding-ccv-parameters-manually) SECTION BELOW!
+
+Final `genesis.json` file with the CCV section: 
 
 Notice: the genesis file includes following slashing parameters:
 * `signed_blocks_window` is `140000`
 * `min_signed_per_window` is `5%`
 
-> Since [**Prop 792**](https://www.mintscan.io/cosmos/proposals/792) was published, Neutron released a new version, v1.0.1, which is going to be used for the mainnet launch. The only difference between v1.0.0-rc1, which was used in the proposal, and v1.0.1 is the upgrade of Interchain Security to the latest release, v1.2.1:
->
-> https://github.com/neutron-org/neutron/compare/v1.0.0-rc1..v1.0.1
->
->**All validators are required to use v1.0.1 during the mainnet launch. The instructions on how to bulid v1.0.1 can be found in the [How to Join](#how-to-join) section.**
+### Adding CCV parameters manually
 
-> If you want to build genesis by your own please take into account difference between the `ccvconsumer` section generated by version v9.0.3 of `gaiad` and the `ccvconsumer` section required for neutron to run. Please check and add `"soft_opt_out_threshold": "0.05"` to the `params` section if it absent. Also you are required to set denoms used to apy rewards. Set `"reward_denoms": ["untrn"]` and `"provider_reward_denoms": ["uatom"]` in the `ccvconsumer` section. To simplify this process you can use following command:
-> 
->  `gaiad query provider consumer-genesis neutron-1 -o json | jq '.params |= . + {"soft_opt_out_threshold": "0.05", "reward_denoms": ["untrn"], "provider_reward_denoms": ["uatom"]}' `
->
-> It will query `consumer-genesis` from Cosmos Hub and will add all required fields with proper values.
+If you want to build genesis by your own please take into account difference between the `ccvconsumer` section generated by version v9.0.3 of `gaiad` and the `ccvconsumer` section required for neutron to run. Please check and add `"soft_opt_out_threshold": "0.05"` to the `params` section if it absent. Also you are required to set denoms used to apy rewards. Set `"reward_denoms": ["untrn"]` and `"provider_reward_denoms": ["uatom"]` in the `ccvconsumer` section. To simplify this process you can use following command:
+
+`gaiad query provider consumer-genesis neutron-1 -o json | jq '.params |= . + {"soft_opt_out_threshold": "0.05", "reward_denoms": ["untrn"], "provider_reward_denoms": ["uatom"]}' `
+
+It will query `consumer-genesis` from Cosmos Hub and will add all required fields with proper values.
 
 For more information regarding the consumer chain creation process, see [CCV: Overview and Basic Concepts](https://github.com/cosmos/ibc/blob/main/spec/app/ics-028-cross-chain-validation/overview_and_basic_concepts.md).
 
