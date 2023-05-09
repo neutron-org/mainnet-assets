@@ -1,5 +1,7 @@
 # `neutron-1`
 
+**THIS IS NOT A FINAL VERSION. PLEASE WAIT FOR THE OFFICIAL ANNOUNCEMENT.**
+
 The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub network as provider chain.
 
 ## Parameters
