@@ -1,5 +1,7 @@
 # `neutron-1`
 
+**THIS IS NOT A FINAL VERSION. PLEASE WAIT FOR THE OFFICIAL ANNOUNCEMENT.**
+
 The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub network as provider chain.
 
 ## Parameters
@@ -43,7 +45,7 @@ The final `genesis.json` information is provided below:
 | Item                  | Description                                                      |
 |-----------------------|------------------------------------------------------------------|
 | **Genesis**           | [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json)                         | 
-| **Checksum (sha256)** | 09182d2f0efca5dddbc338d37334a9322cad3b12b461982a1e20a082e832ab66 |
+| **Checksum (sha256)** | 9496492c81b31befb59a4336d5ae4444c24b863721d21be143d7d4fdf8072c84 |
 
 
 **⚠️ All validators are required use the [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json) file provided in this instruction.**
