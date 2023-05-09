@@ -139,7 +139,8 @@ $ make install
 
 After installation, please check installed version by running:
 
-```$ neutrond version --long
+```
+$ neutrond version --long
 name: neutron
 server_name: neutrond
 version: 1.0.1 
