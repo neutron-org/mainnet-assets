@@ -92,9 +92,7 @@ In the pre-genesis, we used incorrect `slashing` parameters. Below you can see t
 
 Neutron genesis instantiates dozens of smart contracts that are used by the Neutron DAO and the Neutron Token Generation Event. Since the time when Proposal 792 was published, we fixed some bugs and introduced some improvements to our smart contracts.
 
-#### Building the genesis from scratch
-
-We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/genesis.sh) that can be copied to an empty directory and run to get the final genesis. We provide this script **for information purposes only**, and we do not guarantee that it will work on your machine (although if you have a Mac and the Docker daemon is running, it should produce the final `genesis.json` within approximately 30 minutes). **Please use the [genesis.json](neutron-1-genesis.json) file provided in this instruction above.**
+We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/genesis.sh) that can be copied to an empty directory and run to get the final genesis (including building the `wasm` artifacts). We provide this script **for information purposes only**, and we do not guarantee that it will work on your machine (although if you have a Mac and the Docker daemon is running, it should produce the final `genesis.json` within approximately 30 minutes). **Please use the [genesis.json](neutron-1-genesis.json) file provided in this instruction above.**
 
 ## Endpoints
 
