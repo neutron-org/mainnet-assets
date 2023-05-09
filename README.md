@@ -27,7 +27,7 @@ The release binary information is provided below:
 | Reference binary | [neutrond-linux-amd64](./neutrond-linux-amd64) |
 | Checksum (sha256) | 82b608543f2989c7c631d555767800e48f54ede389d193913136b41e5c3293ab |
 
-> The `neutrond-linux-amd64` binary is only provided to verify the SHA256. It was built with Interchain Security release [`v1.0.1`](https://github.com/neutron-org/neutron/releases/tag/v1.0.1). You can generate the binary following the build instructions in that repo.
+> The `neutrond-linux-amd64` binary is only provided to verify the SHA256. It was built with Interchain Security release [`v1.0.1`](https://github.com/neutron-org/neutron/releases/tag/v1.0.1). You can generate the binary following the build instructions in the [neutron-org/neutron](https://github.com/neutron-org/neutron.git) repo.
 
 The Cosmos Hub was recently upgraded to [v9.1.0](https://github.com/cosmos/gaia/releases/tag/v9.1.0), which bumps ICS to [v1.1.0-multiden](https://github.com/cosmos/interchain-security/tree/v1.1.0-multiden). This version introduces two new parameters to prevent Replicated Security’s logic for handling rewards to be abused as a DOS vector.
 
