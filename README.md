@@ -102,7 +102,7 @@ We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/gen
 
 Seed nodes:
 
-1. `e2c07e8e6e808fb36cca0fc580e31216772841df@p2p-erheim.neutron-1.neutron.org:26656`
+1. `24f609fb5946ca3a979f40b7f54132c00104433e@p2p-erheim.neutron-1.neutron.org:26656`
 
 Persistent nodes:
 
