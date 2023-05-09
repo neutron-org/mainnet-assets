@@ -46,7 +46,7 @@ The final `genesis.json` information is provided below:
 | **Checksum (sha256)** | 09182d2f0efca5dddbc338d37334a9322cad3b12b461982a1e20a082e832ab66 |
 
 
-**⚠️ All validators are required use the [genesis.json](./neutron-1-genesis.json) file provided in this instruction.**
+**⚠️ All validators are required use the [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json) file provided in this instruction.**
 
 If you want to get a better idea of what was changed in the genesis since Proposal 792, please read the sections below.
 
