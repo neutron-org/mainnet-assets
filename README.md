@@ -33,7 +33,7 @@ The Cosmos Hub was recently upgraded to [v9.1.0](https://github.com/cosmos/gaia/
 
 This required a release of a new version of Neutron, `v1.0.1`, which must be used for the mainnet launch. The only difference between `v1.0.0-rc1`, which was used in the proposal, and `v1.0.1` is the upgrade of Interchain Security to the latest release, `v1.2.0-multiden`: https://github.com/neutron-org/neutron/compare/v1.0.0-rc1..v1.0.1.
 
-**⚠️ All validators are required to use `v1.0.1` during the mainnet launch. The instructions on how to build `v1.0.1` can be found in the [How to Join](#how-to-join) section.**
+**⚠️ All validators are required to use Neutron `v1.0.1` during the mainnet launch. The instructions on how to build `v1.0.1` can be found in the [How to Join](#how-to-join) section.**
 
 ## Genesis
 
