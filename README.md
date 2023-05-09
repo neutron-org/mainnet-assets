@@ -25,7 +25,7 @@ The release binary information is provided below:
 | **GitHub repo**       | [neutron-org/neutron](https://github.com/neutron-org/neutron.git)      | 
 | **Release**           | [`v1.0.1`](https://github.com/neutron-org/neutron/releases/tag/v1.0.1) |
 | **Reference binary**  | [neutrond-linux-amd64](./neutrond-linux-amd64)                         |
-| **Checksum (sha256)** | 82b608543f2989c7c631d555767800e48f54ede389d193913136b41e5c3293ab       |
+| **Checksum (sha256)** | b628d3eb1e0e12617b2c905f07dc39bd91d5dd3bd284a2a51d47c04cc3aa2e6d       |
 
 > The `neutrond-linux-amd64` binary is only provided to verify the SHA256. It was built with Interchain Security release [`v1.0.1`](https://github.com/neutron-org/neutron/releases/tag/v1.0.1). You can generate the binary following the build instructions in the [neutron-org/neutron](https://github.com/neutron-org/neutron.git) repo.
 
@@ -39,13 +39,13 @@ This required a release of a new version of Neutron, `v1.0.1`, which must be use
 
 The final `genesis.json` information is provided below:
 
-| Item         | Description                                             |
-|--------------|---------------------------------------------------------|
-| Genesis  |   [genesis.json](neutron-1-genesis.json)| 
-| Checksum (sha256) | b9c73221623ef35a2772babff3ce55ee95f8f8fed23a2efcefe1cb79cd092cf5 |
+| Item                  | Description                                                      |
+|-----------------------|------------------------------------------------------------------|
+| **Genesis**           | [genesis.json](./neutron-1-genesis.json)                         | 
+| **Checksum (sha256)** | 09182d2f0efca5dddbc338d37334a9322cad3b12b461982a1e20a082e832ab66 |
 
 
-**⚠️ All validators are required use the [genesis.json](neutron-1-genesis.json) file provided in this instruction.**
+**⚠️ All validators are required use the [genesis.json](./neutron-1-genesis.json) file provided in this instruction.**
 
 If you want to get a better idea of what was changed in the genesis since Proposal 792, please read the sections below.
 
@@ -94,7 +94,7 @@ Neutron genesis instantiates dozens of smart contracts that are used by the Neut
 
 We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/genesis.sh) that can be copied to an empty directory and run to get the final genesis (including building the `wasm` artifacts). We provide this script **for information purposes only**, and we do not guarantee that it will work on your machine (although if you have a Mac and the Docker daemon is running, it should produce the final `genesis.json` within approximately 30 minutes). 
 
-**⚠️ Please use the [genesis.json](neutron-1-genesis.json) file provided in this instruction above.**
+**⚠️ Please use the [genesis.json](./neutron-1-genesis.json) file provided in this instruction above.**
 
 
 ## Endpoints
