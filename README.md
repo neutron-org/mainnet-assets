@@ -10,23 +10,22 @@ Below are the `neutron-1` chain parameters:
 |-------------------------|------------------------------|
 | **chain-id**            | `neutron-1`                  |
 | **denom**               | `untrn`                      |
-| **minimum-gas-prices**  | `0untrn`                     |
+| **minimum-gas-prices**  | `1untrn`                     |
 | **timeout_commit**      | `1s`                         |
 | **genesis_time**        | `2023-05-10T15:00:00.000000Z`|
 
-> The `minimum-gas-prices` parameter must be set to `1untrn`. At chain launch (and until the end of the Token Generation Event) the only address that will have `untrn`s will be the Hermes relayer controlled by Neutron. This relayer will be configured to **only** process `Transfer` messages between Neutron and Cosmos Hub. As soon as the chain starts, we will transfer some `uatoms` from Cosmos Hub to Neutron and will communicate the bridged ATOM denom to the validators. After that, the validators will be able to set the `minimum-gas-prices` in bridged ATOMs.
-
+**The `minimum-gas-prices` parameter must be set to `1untrn`.** At chain launch (and until the end of the Token Generation Event) the only address that will have `untrn`s will be the Hermes relayer controlled by Neutron. This relayer will be configured to **only** process `Transfer` messages between Neutron and Cosmos Hub. As soon as the chain starts, we will transfer some `uatoms` from Cosmos Hub to Neutron and will communicate the bridged ATOM denom to the validators. After that, the validators will be able to set the `minimum-gas-prices` in bridged ATOMs.
 
 ## Binary
 
 The release binary information is provided below:
 
-| Item         | Description                                             |
-|--------------|---------------------------------------------------------|
-| GitHub repo  | [neutron-org/neutron](https://github.com/neutron-org/neutron.git) |
-| Release      | [`v1.0.1`](https://github.com/neutron-org/neutron/releases/tag/v1.0.1) |
-| Reference binary | [neutrond-linux-amd64](./neutrond-linux-amd64) |
-| Checksum (sha256) | 82b608543f2989c7c631d555767800e48f54ede389d193913136b41e5c3293ab |
+| Item                  | Description                                                            |
+|-----------------------|------------------------------------------------------------------------|
+| **GitHub repo**       | [neutron-org/neutron](https://github.com/neutron-org/neutron.git)      | 
+| **Release**           | [`v1.0.1`](https://github.com/neutron-org/neutron/releases/tag/v1.0.1) |
+| **Reference binary**  | [neutrond-linux-amd64](./neutrond-linux-amd64)                         |
+| **Checksum (sha256)** | 82b608543f2989c7c631d555767800e48f54ede389d193913136b41e5c3293ab       |
 
 > The `neutrond-linux-amd64` binary is only provided to verify the SHA256. It was built with Interchain Security release [`v1.0.1`](https://github.com/neutron-org/neutron/releases/tag/v1.0.1). You can generate the binary following the build instructions in the [neutron-org/neutron](https://github.com/neutron-org/neutron.git) repo.
 
