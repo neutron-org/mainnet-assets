@@ -1,8 +1,8 @@
 # `neutron-1`
 
-**THIS IS NOT A FINAL VERSION. PLEASE WAIT FOR THE OFFICIAL ANNOUNCEMENT.**
-
 The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub network as provider chain.
+
+**⚠️ If you have not used key assignment for your consumer node yet, please wait until Neutron is live and receiving valset updates from the Hub before you do so.**
 
 ## Parameters
 
