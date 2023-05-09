@@ -7,6 +7,7 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
   * **denom**: `untrn`
   * **minimum-gas-prices**: `0untrn`
   * **timeout_commit**: `1s`
+  * **genesis_time**: `2023-05-10T15:00:00.000000Z`
   * **Spawn time**: `2023-05-08T11:00:00Z`
     * Even if a proposal passes, the CCV state will not be available from the provider chain until after the spawn time is reached.
 * Binary:
