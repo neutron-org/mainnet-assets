@@ -51,7 +51,7 @@ If you want to get a better idea of what was changed in the genesis since Propos
 
 ---
 
-#### `ccvsonsumer` section updates
+#### `ccvconsumer` section updates
 
 Due to the upgrade of the ICS dependency to [v1.1.0-multiden](https://github.com/cosmos/interchain-security/tree/v1.1.0-multiden), and due to using a version of ICS with soft opt-out,  there is 3 parameters that were added to the `ccvconsumer` section of the genesis:
 
