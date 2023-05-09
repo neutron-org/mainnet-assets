@@ -94,7 +94,7 @@ Neutron genesis instantiates dozens of smart contracts that are used by the Neut
 
 #### Building the genesis from scratch
 
-We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/genesis.sh) that can be copied to an empty directory and run to get the final genesis. We provide this script **for information purposes only**, and we do not guarantee that it will work on your machine (although if you have a Mac and the Docker demon is running, it should produce the final `genesis.json` within approximately 30 minutes). **PLease use the [genesis.json](neutron-1-genesis.json) file provided in this instruction.**
+We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/genesis.sh) that can be copied to an empty directory and run to get the final genesis. We provide this script **for information purposes only**, and we do not guarantee that it will work on your machine (although if you have a Mac and the Docker daemon is running, it should produce the final `genesis.json` within approximately 30 minutes). **Please use the [genesis.json](neutron-1-genesis.json) file provided in this instruction above.**
 
 ## Endpoints
 
