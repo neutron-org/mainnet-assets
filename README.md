@@ -91,7 +91,7 @@ You should see the following:
 ```
 name: neutron
 server_name: neutrond
-version: 1.0.0 
+version: 1.0.1 
 commit: 2a9333c935b321cfa2cf213fb9adb38661d7f349
 ``` 
 
