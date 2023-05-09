@@ -31,7 +31,8 @@ The release binary information is provided below:
 
 The Cosmos Hub was recently upgraded to [v9.1.0](https://github.com/cosmos/gaia/releases/tag/v9.1.0), which bumps ICS to [v1.1.0-multiden](https://github.com/cosmos/interchain-security/tree/v1.1.0-multiden). This version introduces two new parameters to prevent Replicated Security’s logic for handling rewards to be abused as a DOS vector.
 
-This required a release of a new version of Neutron, `v1.0.1`, which must be used for the mainnet launch. The only difference between `v1.0.0-rc1`, which was used in the proposal, and `v1.0.1` is the upgrade of Interchain Security to the latest release, `v1.2.0-multiden`: https://github.com/neutron-org/neutron/compare/v1.0.0-rc1..v1.0.1.
+This required a release of a new version of Neutron, `v1.0.1`, which must be used for the mainnet launch. The only difference between `v1.0.0-rc1`, which was used in the proposal, and `v1.0.1` is the upgrade of Interchain Security to the latest release, [`v1.2.0-multiden`](https://github.com/cosmos/interchain-security/tree/release/v1.2.0-multiden), which is compatible with the new parameters.
+You can check the difference [here](https://github.com/neutron-org/neutron/compare/v1.0.0-rc1..v1.0.1).
 
 **⚠️ All validators are required to use Neutron `v1.0.1` during the mainnet launch. The instructions on how to build `v1.0.1` can be found in the [How to Join](#how-to-join) section.**
 
@@ -94,7 +95,7 @@ Neutron genesis instantiates dozens of smart contracts that are used by the Neut
 
 We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/genesis.sh) that you can copy to an empty directory and run to get the final genesis. We provide this script **for information purposes only**, and we do not guarantee that it will work on your machine (although if you have a Mac and the Docker daemon is running, it should produce the final `genesis.json` within approximately 30 minutes because it will build all the `wasm` binaries). 
 
-**⚠️ Please use the [genesis.json](./neutron-1-genesis.json) file provided in this instruction above.**
+**⚠️ Please use the [genesis.json](./neutron-1-genesis.json) file provided above during the coordinated launch.**
 
 
 ## Endpoints
