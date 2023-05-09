@@ -137,16 +137,13 @@ $ cd neutron
 $ make install
 ```
 
-after installation please check installed version by running:
+After installation, please check installed version by running:
 
-`neutrond version --long`
-
-You should see the following:
-```
+`$ neutrond version --long`
 name: neutron
 server_name: neutrond
 version: 1.0.1 
-commit: 2a9333c935b321cfa2cf213fb9adb38661d7f349
+commit: c236f1045f866c341ec26f5c409c04d201a19cde
 ``` 
 
-or you can download binary directly from our [official release](https://github.com/neutron-org/neutron/releases/tag/v1.0.1).
+You can also download binary directly from our [official release](https://github.com/neutron-org/neutron/releases/tag/v1.0.1).
