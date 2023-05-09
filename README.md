@@ -1,4 +1,4 @@
-# `neutron-1` Chain Details
+# `neutron-1`
 
 The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub network as provider chain.
 
