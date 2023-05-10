@@ -104,7 +104,7 @@ We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/gen
 
 Seed nodes:
 
-1. `24f609fb5946ca3a979f40b7f54132c00104433e@p2p-erheim.neutron-1.neutron.org:26656`
+1. `24f609fb5946ca3a979f40b7f54132c00104433e@p2p-erheim.neutron-1.neutron.org:26656,20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:19156`
 
 Persistent nodes:
 
