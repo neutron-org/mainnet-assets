@@ -113,6 +113,7 @@ Persistent nodes:
 1. `e5d2743d9a3de514e4f7b9461bf3f0c1500c58d9@neutron.peer.stakewith.us:39956`
 2. `982f968cd6ac567fdddf2170f7da9725ba21693d@51.210.209.49:15600`
 3. `8e2af33b3fc9fee81dda7d351a65d93e8ac97409@65.108.71.163:2480`
+4. `b119a600d082963d27a9ba9cd762c7c83f00e7d1@81.196.190.108:10083`
 
 The following state sync node serve snapshots every 2000 blocks:
 
