@@ -108,7 +108,7 @@ Seed nodes:
 
 Persistent nodes:
 
-**TBA**
+1. e5d2743d9a3de514e4f7b9461bf3f0c1500c58d9@neutron.peer.stakewith.us:39957
 
 The following state sync node serve snapshots every 1000 blocks:
 
