@@ -19,7 +19,7 @@ $ gaiad tendermint show-validator
 
 If your `consumer_address` is empty then please simply check that your `<VALIDATOR PUBLIC KEY>` presented in the Neutron genesis
 ```
-$ cat ~/.neutrond/config/genesis.json | grep 0wQ1SJucRxDeAVwCQzFinkm3K0UkOlnkf5Ll+BluDQA= -B 2 -A 3
+$ cat ~/.neutrond/config/genesis.json | grep <VALIDATOR PUBLIC KEY> -B 2 -A 3
 {
     "pub_key": {
        "ed25519": "0wQ1SJucRxDeAVwCQzFinkm3K0UkOlnkf5Ll+BluDQA="
