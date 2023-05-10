@@ -31,3 +31,5 @@ $ cat ~/.neutrond/config/genesis.json | grep <VALIDATOR PUBLIC KEY> -B 2 -A 3
 or if `consumer_address` contains address then you need to check was it added to the genesis or `<VALIDATOR PUBLIC KEY>` was used in it. To do so please run above command with `consumer_address` public key or with `<VALIDATOR PUBLIC KEY>` to find which address was used.
 
 With this set of commands you can be sure what validator key to use during network start.
+
+> If you will see that `consumer_address` is not empty but `<VALIDATOR PUBLIC KEY>` was added to the genesis it means that you added `consumer_address` after network spawn time (08 May 2023 11:00 UTC) and should use your Cosmos Hub validator key until validator set update. After you will see that your Neutron validator started to miss blocks you need to update validator key with new one that was used to add `consumer_address`.
