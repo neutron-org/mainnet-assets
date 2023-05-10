@@ -10,7 +10,7 @@ $ gaiad q provider validator-consumer-key neutron-1 $GAIA_VALCONSADDR
 consumer_address: "<empty or used consumer address>"
 ```
 
-Next please find you Cosmos Hub validator public key
+Next please find your Cosmos Hub validator public key
 
 ```
 $ gaiad tendermint show-validator
