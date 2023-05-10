@@ -106,15 +106,16 @@ Seed nodes:
 
 1. `24f609fb5946ca3a979f40b7f54132c00104433e@p2p-erheim.neutron-1.neutron.org:26656`
 2. `20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:19156`
+3. `b1c6fa570a184c56d0d736d260b8065d887e717c@p2p-kralum.neutron-1.neutron.org:26656`
 
 Persistent nodes:
 
 1. e5d2743d9a3de514e4f7b9461bf3f0c1500c58d9@neutron.peer.stakewith.us:39956
 2. 982f968cd6ac567fdddf2170f7da9725ba21693d@51.210.209.49:15600
 
-The following state sync node serve snapshots every 1000 blocks:
+The following state sync node serve snapshots every 2000 blocks:
 
-**TBA**
+1. http://rpc-kralum.neutron-1.neutron.org:26657
 
 ## How to Join
 
