@@ -114,6 +114,8 @@ Persistent nodes:
 2. `982f968cd6ac567fdddf2170f7da9725ba21693d@51.210.209.49:15600`
 3. `8e2af33b3fc9fee81dda7d351a65d93e8ac97409@65.108.71.163:2480`
 4. `b119a600d082963d27a9ba9cd762c7c83f00e7d1@81.196.190.108:10083`
+5. `9cede4e9f58fc3dfc80ad643c0e1f1cbab26b8ba@138.201.135.251:26656`
+
 
 The following state sync node serve snapshots every 2000 blocks:
 
