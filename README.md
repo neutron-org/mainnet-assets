@@ -119,7 +119,7 @@ Persistent nodes:
 
 The following state sync node serve snapshots every 2000 blocks:
 
-1. http://rpc-kralum.neutron-1.neutron.org:26657
+1. `http://rpc-kralum.neutron-1.neutron.org:26657`
 
 ## How to Join
 
