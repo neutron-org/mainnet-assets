@@ -109,6 +109,7 @@ Seed nodes:
 Persistent nodes:
 
 1. e5d2743d9a3de514e4f7b9461bf3f0c1500c58d9@neutron.peer.stakewith.us:39956
+2. 982f968cd6ac567fdddf2170f7da9725ba21693d@51.210.209.49:26656
 
 The following state sync node serve snapshots every 1000 blocks:
 
