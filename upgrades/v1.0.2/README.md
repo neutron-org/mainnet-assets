@@ -1,4 +1,4 @@
-> ## This is security update. It will not break consensus state so please apply it ASAP.
+> ## This is an important security update. It is not consensus breaking so please apply it to your validator ASAP. 
 
 
 # Upgrade Neutron from v1.0.1 to v1.0.2
