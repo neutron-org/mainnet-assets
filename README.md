@@ -4,6 +4,14 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 
 **⚠️ If you have not used key assignment for your consumer node yet, please wait until Neutron is live and receiving valset updates from the Hub before you do so.**
 
+## Upgrades history
+
+| Version      | Value                             | Height                            |
+|--------------|-----------------------------------|-----------------------------------|
+| **v1.0.1**   | Genesis version                   | From start                        |
+| **v1.0.2**   | Security upgrade ([more info][1]) | Anytime, not breaks the consensus |
+
+
 ## Parameters
 
 Below are the `neutron-1` chain parameters:
@@ -160,3 +168,6 @@ commit: c236f1045f866c341ec26f5c409c04d201a19cde
 ``` 
 
 You can also download binary directly from our [official release](https://github.com/neutron-org/neutron/releases/tag/v1.0.1).
+
+
+[1]:	./upgrades/v1.0.2/README.md
