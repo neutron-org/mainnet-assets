@@ -125,6 +125,7 @@ Persistent nodes:
 4. `b119a600d082963d27a9ba9cd762c7c83f00e7d1@81.196.190.108:10083`
 5. `9cede4e9f58fc3dfc80ad643c0e1f1cbab26b8ba@138.201.135.251:26656`
 6. `2ee64f9f128e8a9f15f47a8f8d0e9cde7351fd17@46.101.193.151:26656`
+7. `5865c2bae7c0403c0c6d90c01556b1b2bb437ef8@51.89.195.173:26656`
 
 Also you can use this [addrbook.json](./addrbook.json) to bootstrap your nodes.
 
