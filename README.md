@@ -115,7 +115,8 @@ Seed nodes:
 1. `24f609fb5946ca3a979f40b7f54132c00104433e@p2p-erheim.neutron-1.neutron.org:26656`
 2. `20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:19156`
 3. `b1c6fa570a184c56d0d736d260b8065d887e717c@p2p-kralum.neutron-1.neutron.org:26656`
-4. `ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:19156`
+4. `f80e07ebb0ae3f11d938e8e224705b1039f000b5@neutron.dhk.org:26656`
+5. `ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:19156`
 
 Persistent nodes:
 
