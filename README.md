@@ -4,6 +4,14 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 
 **⚠️ If you have not used key assignment for your consumer node yet, please wait until Neutron is live and receiving valset updates from the Hub before you do so.**
 
+## Upgrades history
+
+| Version      | Value                             | Height                            |
+|--------------|-----------------------------------|-----------------------------------|
+| **v1.0.1**   | Genesis version                   | From start                        |
+| **v1.0.2**   | Security upgrade ([more info][1]) | Anytime, not breaks the consensus |
+
+
 ## Parameters
 
 Below are the `neutron-1` chain parameters:
@@ -108,6 +116,7 @@ Seed nodes:
 2. `20e1000e88125698264454a884812746c2eb4807@seeds.lavenderfive.com:19156`
 3. `b1c6fa570a184c56d0d736d260b8065d887e717c@p2p-kralum.neutron-1.neutron.org:26656`
 4. `f80e07ebb0ae3f11d938e8e224705b1039f000b5@neutron.dhk.org:26656`
+5. `ade4d8bc8cbe014af6ebdf3cb7b1e9ad36f412c0@seeds.polkachu.com:19156`
 
 Persistent nodes:
 
@@ -117,6 +126,9 @@ Persistent nodes:
 4. `b119a600d082963d27a9ba9cd762c7c83f00e7d1@81.196.190.108:10083`
 5. `9cede4e9f58fc3dfc80ad643c0e1f1cbab26b8ba@138.201.135.251:26656`
 6. `2ee64f9f128e8a9f15f47a8f8d0e9cde7351fd17@46.101.193.151:26656`
+7. `ce526dc00568900d54dedf2fd2680ddfc7a58c59@138.201.124.215:36656`
+8. `5865c2bae7c0403c0c6d90c01556b1b2bb437ef8@51.89.195.173:26656`
+
 
 Also you can use this [addrbook.json](./addrbook.json) to bootstrap your nodes.
 
@@ -161,3 +173,6 @@ commit: c236f1045f866c341ec26f5c409c04d201a19cde
 ``` 
 
 You can also download binary directly from our [official release](https://github.com/neutron-org/neutron/releases/tag/v1.0.1).
+
+
+[1]:	./upgrades/v1.0.2/README.md
