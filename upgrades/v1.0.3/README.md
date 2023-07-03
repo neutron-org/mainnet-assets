@@ -90,7 +90,7 @@ After performing these steps, the upgrade will proceed as usual using Cosmovisor
   name: neutron
   server_name: neutrond
   version: 1.0.3
-  commit: <TODO_COMMIT>
+  commit: 1c701333f7400dda62de6e3541ac98a6a1ba5d77
 ```
 
 ## Copy the new neutron (v1.0.3) binary to cosmovisor current directory
