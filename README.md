@@ -6,23 +6,24 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 
 ## Upgrades history
 
-| Version      | Value                             | Height                            |
-|--------------|-----------------------------------|-----------------------------------|
-| **v1.0.1**   | Genesis version                   | From start                        |
-| **v1.0.2**   | Security upgrade ([more info][1]) | Anytime, not breaks the consensus |
+| Version    | Value                             | Height                                                                        |
+|------------|-----------------------------------|-------------------------------------------------------------------------------|
+| **v1.0.1** | Genesis version                   | From start                                                                    |
+| **v1.0.2** | Security upgrade ([more info][1]) | Anytime, not breaks the consensus                                             |
+| **v1.0.3** | Security upgrade ([more info][2]) | Coordinated **consensus breaking** upgrade without proposal at height 1236300 |
 
 
 ## Parameters
 
 Below are the `neutron-1` chain parameters:
 
-| Name                    | Value                        |
-|-------------------------|------------------------------|
-| **chain-id**            | `neutron-1`                  |
-| **denom**               | `untrn`                      |
-| **minimum-gas-prices**  | `0.01untrn`                  |
-| **timeout_commit**      | `1s`                         |
-| **genesis_time**        | `2023-05-10T15:00:00.000000Z`|
+| Name                   | Value                         |
+|------------------------|-------------------------------|
+| **chain-id**           | `neutron-1`                   |
+| **denom**              | `untrn`                       |
+| **minimum-gas-prices** | `0.01untrn`                   |
+| **timeout_commit**     | `1s`                          |
+| **genesis_time**       | `2023-05-10T15:00:00.000000Z` |
 
 **The `minimum-gas-prices` parameter must be set to `0.01untrn`.** At chain launch (and until the end of the Token Generation Event) the only address that will have `untrn`s will be the initial Hermes relayer. This relayer will be configured to **only** process `Transfer` messages between Neutron and Cosmos Hub. As soon as the chain starts, some `uatoms` will be transferred from Cosmos Hub to Neutron and the bridged ATOM denom will be communicated to the validators. After that, the validators will be able to set the `minimum-gas-prices` in bridged ATOMs.
 
@@ -176,3 +177,4 @@ You can also download binary directly from our [official release](https://github
 
 
 [1]:	./upgrades/v1.0.2/README.md
+[2]:	./upgrades/v1.0.3/README.md
