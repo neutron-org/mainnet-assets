@@ -5,7 +5,7 @@
 
 ### Release Details
 * https://github.com/neutron-org/neutron/releases/tag/v1.0.3
-* Chain upgrade height : <TODO_HEIGHT>. Exact upgrade time can be checked [here](https://mintscan.io/neutron-1/blocks/<TODO_HEIGHT>).
+* Chain upgrade height : <TODO_HEIGHT>. Exact upgrade time can be checked [here](https://mintscan.io/neutron/blocks/<TODO_HEIGHT>).
 * Go version has been frozen at `1.20`. If you are going to build Neutron binary from source, make sure you are using the right GO version!
 
 # To upgrade neutron chain
