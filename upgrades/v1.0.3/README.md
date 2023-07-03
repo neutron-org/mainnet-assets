@@ -22,6 +22,8 @@ Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=false"
 ```
 
+After that you will need to run `sudo systemctl daemon-reload` to apply changes in the service configuration.
+
 There is no need to restart the node yet; these changes will get applied during the node restart in the next step.
 
 ## Step 2: Restart neutrond with a configured `halt-height`.
