@@ -42,7 +42,8 @@ There are two mutually exclusive options for this stage:
 # Note: Commitment of state will be attempted on the corresponding block.
 halt-height = 1236300
 ```
-
+* Start neutrond process
+* 
 * Wait for the upgrade height, and proceed to Step 2.
 
 ### Option 2: Restart the `neutrond` binary with command line flags
