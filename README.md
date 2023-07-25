@@ -11,6 +11,7 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 | **v1.0.1** | Genesis version                   | From start                                                                    |
 | **v1.0.2** | Security upgrade ([more info][1]) | Anytime, not breaks the consensus                                             |
 | **v1.0.3** | Security upgrade ([more info][2]) | Coordinated **consensus breaking** upgrade without proposal at height 1236300 |
+| **v1.0.4** | Security upgrade ([more info][3]) | Anytime, not breaks the consensus                                             |
 
 
 ## Parameters
@@ -178,3 +179,4 @@ You can also download binary directly from our [official release](https://github
 
 [1]:	./upgrades/v1.0.2/README.md
 [2]:	./upgrades/v1.0.3/README.md
+[3]:	./upgrades/v1.0.4/README.md
