@@ -1,4 +1,4 @@
-> ## This is just a QoL upgrade. It is not consensus breaking.
+> ## This is a QoL upgrade. It is consensus breaking. Please apply this version before height #1909000.
 
 
 # Upgrade Neutron from v1.0.3 to v1.0.4
