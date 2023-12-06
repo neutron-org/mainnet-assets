@@ -6,7 +6,7 @@ order: 2
 
 # Neutron v2.0.0 Upgrade, Instructions
 
-* Chain upgrade point: `20th of December 15:30 UTC` approximately at height `<UPGRADE_HEIGHT>`;
+* Chain upgrade point: `20th of December 18:00 UTC` approximately at height `5405000`;
 * Go version: `v1.20`
 * Release: https://github.com/neutron-org/neutron/releases/tag/v2.0.0
 * `minimum-gas-prices` app.toml parameter is mandatory starting from the release. Please set recommended value as `minimum-gas-prices = "0.56untrn,0.02ibc/C4CFF46FD6DE35CA4CF4CE031E643C8FDC9BA4B99AE598E9B0ED98FE3A2319F9,0.2ibc/F082B65C88E4B6D5EF1DB243CDA1D331D002759E938A0F5CD3FFDC5D53B3E349"`. You get an error `Error: set min gas price in app.toml or flag or env variable: error in app.toml` if you have not set it.
@@ -22,7 +22,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately at `15:30 UTC` approximately at height `<UPGRADE_HEIGHT>`;
+The upgrade will take place approximately at `18:00 UTC` approximately at height `5405000`;
 
 ## Chain-id will remain the same
 
@@ -76,7 +76,7 @@ Make sure Neutron v2.0.0 is installed by either downloading a [compatible binary
 Run Neutron v1.0.4 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v2.0.0" NEEDED at height: <UPGRADE_HEIGHT>: upgrade to v2.0.0 and applying upgrade "v2.0.0" at height:h
+ERR UPGRADE "v2.0.0" NEEDED at height: 5405000: upgrade to v2.0.0 and applying upgrade "v2.0.0" at height:h
 ```
 
 Stop the node, and switch the binary to Neutron v2.0.0 and re-start by `neutrond start`.
@@ -209,7 +209,7 @@ When the upgrade block height is reached, you can find the following information
 
 TODO: REPLACE "h" with actual values and make sure "v2.0.0" is the precise version name
 ```shell
-ERR UPGRADE "v2.0.0" NEEDED at height: <UPGRADE_HEIGHT>: upgrade to v2.0.0 and applying upgrade "v2.0.0" at height:h
+ERR UPGRADE "v2.0.0" NEEDED at height: 5405000: upgrade to v2.0.0 and applying upgrade "v2.0.0" at height:h
 ```
 
 Then the Cosmovisor will create `$NEUTRON_HOME/cosmovisor/upgrades/v2.0.0/bin` and download the Neuton v2.0.0 binary to this folder according to links in the `--info` field of the upgrade proposal.
@@ -226,7 +226,7 @@ According to our test runs, upgrade process takes the following steps:
 
 1) "Preparation", no output in the logs ~10min
 2) Applying migration handlers, you can see relevant entities (`migrating module ...`) in the logs ~5 min
-3) Commiting state after migration ~40-50mins (stage starts right after the line `INF executed block height=<UPGRADE_HEIGHT> module=consensus num_invalid_txs=0 num_valid_txs=0`)
+3) Commiting state after migration ~40-50mins (stage starts right after the line `INF executed block height=5405000 module=consensus num_invalid_txs=0 num_valid_txs=0`)
 
 ## Rollback plan
 
@@ -234,7 +234,7 @@ During the network upgrade, core Neutron team will be keeping an ever vigilant e
 
 Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v1.0.4 binary using the following command:
 
-> neutrond start --unsafe-skip-upgrade <UPGRADE_HEIGHT>
+> neutrond start --unsafe-skip-upgrade 5405000
 
 Note: There is no particular need to restore a state snapshot prior to the upgrade height, unless specifically directed by core Neutron team.
 
