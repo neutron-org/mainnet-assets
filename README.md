@@ -12,6 +12,7 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 | **v1.0.2** | Security upgrade ([more info][1]) | Anytime, not breaks the consensus                                             |
 | **v1.0.3** | Security upgrade ([more info][2]) | Coordinated **consensus breaking** upgrade without proposal at height 1236300 |
 | **v1.0.4** | Security upgrade ([more info][3]) | Anytime before height #1909000, **consensus breaking**                        |
+| **v2.0.0** | Upgrade ([more info][4]) | Coordinated **consensus breaking** upgrade with a proposal (<LINK_TO_PROPOSAL>) at height 5405000 [[TODO]]  
 
 
 ## Parameters
@@ -153,12 +154,11 @@ The following state sync node serve snapshots every 2000 blocks:
 | Neutron            | v1.0.1   |
 | Go                 | >1.20    |
 
-
 ### Node manual installation
 
 Build and install the Neutron binary. 
 
-```
+```bash
 $ git clone -b v1.0.1 https://github.com/neutron-org/neutron.git
 $ cd neutron
 $ make install
@@ -166,17 +166,17 @@ $ make install
 
 After installation, please check installed version by running:
 
-```
+```bash
 $ neutrond version --long
 name: neutron
 server_name: neutrond
 version: 1.0.1 
 commit: c236f1045f866c341ec26f5c409c04d201a19cde
-``` 
+```
 
 You can also download binary directly from our [official release](https://github.com/neutron-org/neutron/releases/tag/v1.0.1).
 
-
-[1]:	./upgrades/v1.0.2/README.md
-[2]:	./upgrades/v1.0.3/README.md
-[3]:	./upgrades/v1.0.4/README.md
+[1]:  ./upgrades/v1.0.2/README.md
+[2]:  ./upgrades/v1.0.3/README.md
+[3]:  ./upgrades/v1.0.4/README.md
+[4]:  ./upgrades/v2.0.0/README.md
