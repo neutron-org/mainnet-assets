@@ -242,7 +242,7 @@ Important: A social consensus decision to skip the upgrade will be based solely 
 
 ## Communications
 
-Operators are encouraged to join the `#replicated-security-mainnet` channel in the `mainnets` section of the Cosmos Hub Discord. This channel is the primary communication tool for operators to ask questions, report upgrade status, report technical issues, and to build social consensus should the need arise. This channel is restricted to known operators and requires verification beforehand. Request to join the `#validator-chat` channel by opening a ticket or asking in the `general` channel.
+Operators are encouraged to join the `#validator-chat` [channel](https://discord.com/channels/986573321023942708/1030043854637899816) in the `HUB VALIDATOR` section of the Neutron Discord. This channel is the primary communication tool for operators to ask questions, report upgrade status, report technical issues, and to build social consensus should the need arise. This channel is restricted to known operators and requires verification beforehand. Request to join the `#validator-chat` channel by opening a ticket or asking in the `general` channel.
 
 ## Risks
 
