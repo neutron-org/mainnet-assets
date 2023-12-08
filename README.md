@@ -12,7 +12,7 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 | **v1.0.2** | Security upgrade ([more info][1]) | Anytime, not breaks the consensus                                             |
 | **v1.0.3** | Security upgrade ([more info][2]) | Coordinated **consensus breaking** upgrade without proposal at height 1236300 |
 | **v1.0.4** | Security upgrade ([more info][3]) | Anytime before height #1909000, **consensus breaking**                        |
-| **v2.0.0** | Upgrade ([more info][4]) | Coordinated **consensus breaking** upgrade with a proposal (<LINK_TO_PROPOSAL>) at height 5416000 [[TODO]]  
+| **v2.0.0** | Upgrade ([more info][4]) | Coordinated **consensus breaking** upgrade with a [proposal 25](https://governance.neutron.org/proposals/25) at height 5416000  
 
 
 ## Parameters
