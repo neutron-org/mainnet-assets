@@ -76,7 +76,7 @@ Make sure Neutron v2.0.0 is installed by either downloading a [compatible binary
 Run Neutron v1.0.4 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v2.0.0" NEEDED at height: 5416000: upgrade to v2.0.0 and applying upgrade "v2.0.0" at height:h
+ERR UPGRADE "v2.0.0" NEEDED at height: 5416000: upgrade to v2.0.0 and applying upgrade "v2.0.0" at height:5416000
 ```
 
 Stop the node, and switch the binary to Neutron v2.0.0 and re-start by `neutrond start`.
