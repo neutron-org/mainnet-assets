@@ -207,7 +207,6 @@ Skipping the invariant checks can help decrease the upgrade time significantly.
 
 When the upgrade block height is reached, you can find the following information in the log:
 
-TODO: REPLACE "h" with actual values and make sure "v2.0.0" is the precise version name
 ```shell
 ERR UPGRADE "v2.0.0" NEEDED at height: 5416000: upgrade to v2.0.0 and applying upgrade "v2.0.0" at height:h
 ```
