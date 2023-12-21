@@ -252,6 +252,9 @@ The riskiest thing a validator can do is discover that they made a mistake and r
 ## FAQ
 1. Q: My node restarted in the middle of upgrade process (OOM killed, hardware issues, etc), is it safe to just proceed with the upgrade
    
-   A: No. Most likely the upgrade will be completed successfully. But you get AppHash error after the network gets up. It's a lot safier to restart full process from scratch(recover the node from a backup)
+   A: No. Most likely the upgrade will be completed successfully. But you get AppHash error after the network gets up. It's a lot safier to restart full process from scratch(recover the node from a backup).
+   
+   To perform an upgrade you need to keep your `./data/priv_validator_state.json` file when you are applying a snapshot from the backup. 
+This will help you avoid the risk of slashing due to double signing.
 
 <!-- markdown-link-check-enable -->
