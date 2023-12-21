@@ -76,7 +76,7 @@ Make sure Neutron v2.0.0 is installed by either downloading a [compatible binary
 Run Neutron v1.0.4 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v2.0.0" NEEDED at height: 5416000: upgrade to v2.0.0 and applying upgrade "v2.0.0" at height:h
+ERR UPGRADE "v2.0.0" NEEDED at height: 5416000: upgrade to v2.0.0 and applying upgrade "v2.0.0" at height:5416000
 ```
 
 Stop the node, and switch the binary to Neutron v2.0.0 and re-start by `neutrond start`.
@@ -248,5 +248,10 @@ Operators are encouraged to join the `#validator-chat` [channel](https://discord
 As a validator performing the upgrade procedure on your consensus nodes carries a heightened risk of double-signing and being slashed. The most important piece of this procedure is verifying your software version and genesis file hash before starting your validator and signing.
 
 The riskiest thing a validator can do is discover that they made a mistake and repeat the upgrade procedure again during the network startup. If you discover a mistake in the process, the best thing to do is wait for the network to start before correcting it.
+
+## FAQ
+1. Q: My node restarted in the middle of upgrade process (OOM killed, hardware issues, etc), is it safe to just proceed with the upgrade
+   
+   A: No. Most likely the upgrade will be completed successfully. But you get AppHash error after the network gets up. It's a lot safier to restert full process from scratch(recover the node from a backup)
 
 <!-- markdown-link-check-enable -->
