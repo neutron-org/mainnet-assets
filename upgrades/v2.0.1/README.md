@@ -1,21 +1,73 @@
 # Upgrade from Neutron v2.0.0 to v2.0.1
 
-> ## This is an important security update. It **is consensus breaking**, so please apply it to your validator ASAP.
+> ## This is an important security update. IT IS CONSENSUS BREAKING, so please apply the fix only on height <TODO_HEIGHT>.
 
 ### Release Details
 * https://github.com/neutron-org/neutron/releases/tag/v2.0.1
-* Chain upgrade time: 10th of January 2024 3 PM UTC.
+* Chain upgrade height : <TODO_HEIGHT>. Exact upgrade time can be checked [here](https://www.mintscan.io/neutron/blocks/<TODO_HEIGHT>).
 * Go version has been frozen at `1.20`. If you are going to build Neutron binary from source, make sure you are using the right GO version!
 
-# Create the updated Neutron binary of v2.0.1
+# To upgrade neutron chain
 
-## Go to neutron directory if present else clone the repository
+## Step 1: Alter systemd service configuration
+
+We need to disable automatic restart of the node service. To do so please alter your `neutrond.service` file configuration and set appropriate lines to following values.
+
+```
+Restart=no 
+RestartSec=3      <- remove line
+
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
+Environment="DAEMON_RESTART_AFTER_UPGRADE=false"
+```
+
+After that you will need to run `sudo systemctl daemon-reload` to apply changes in the service configuration.
+
+There is no need to restart the node yet; these changes will get applied during the node restart in the next step.
+
+## Step 2: Restart neutrond with a configured `halt-height`.
+
+This upgrade requires `neutrond` to have knowledge of the planned halt height. Please be aware that there is an extra step at the end to revert to `neutrond`'s original configurations.
+
+There are two mutually exclusive options for this stage:
+
+### Option 1: Set the halt height by modifying `app.toml`
+
+* Stop the neutrond process.
+
+* Edit the application configuration file at `~/.neutron/config/app.toml` so that `halt-height` reflects the upgrade plan:
+
+```toml
+# Note: Commitment of state will be attempted on the corresponding block.
+halt-height = <TODO_HEIGHT>
+```
+* Start neutrond process
+
+* Wait for the upgrade height, and proceed to Step 2.
+
+### Option 2: Restart the `neutrond` binary with command line flags
+
+* Stop the neutrond process.
+
+* Do not modify `app.toml`. Restart the `neutrond` process with the flag `--halt-height`:
+```shell
+neutrond --halt-height <TODO_HEIGHT>
+```
+
+* Wait for the upgrade height and confirm that the node has halted
+
+After performing these steps, the upgrade will proceed as usual using Cosmovisor.
+
+# Setup Cosmovisor
+## Create the updated Neutron binary of v2.0.1
+
+### Go to neutron directory if present else clone the repository
 
 ```shell
    git clone https://github.com/neutron-org/neutron.git
 ```
 
-## Follow these steps if neutron repo already present
+### Follow these steps if neutron repo already present
 
 ```shell
    cd $HOME/neutron
@@ -25,7 +77,7 @@
    make install
 ```
 
-## Check the new neutron version, verify the latest commit hash
+### Check the new neutron version, verify the latest commit hash
 ```shell
    $ neutrond version --long
    name: neutron
@@ -35,24 +87,14 @@
    ...
 ```
 
-## Or check checksum of the binary if you decided to download it
+### Or check checksum of the binary if you decided to download it
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
 <TODO_HASH>  neutrond-linux-amd64
 ```
 
-## Applying the patch
-
-**1. Stop the node**
-
-**2. Copy the new neutron (v2.0.1) binary to cosmovisor current directory**
-
-```shell
-   cp $GOPATH/bin/neutrond ~/.neutrond/cosmovisor/current/bin
-```
-
-**3. Make sure you are using the proper version of libwasm**
+## Make sure you are using the proper version of libwasm
 
 You can check the version you are currently using by running the following command:
 ```
@@ -64,8 +106,7 @@ The proper version is `1.5.1`.
 
 **If the version on your machine is different you MUST change it immediately!**
 
-<details>
-<summary>Ways to change libwasmvm</summary>
+#### Ways to change libwasmvm
 
 - Use a statically built Neutrond binary from an official Neutron release: [https://github.com/neutron-org/neutron/releases/tag/v2.0.1](https://github.com/neutron-org/neutron/releases/tag/v2.0.1)
 - If you built Neutron binary by yourself, `libwasmvm` should be loaded dynamically in your binary and somehow, the wrong `libwasmvm` library was present on your machine. You can change it by downloading the proper one and linking it to the Neutron binary manually:
@@ -85,6 +126,8 @@ $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/
 $ neutrond q wasm libwasmvm-version
 1.5.1
 ```
-</details>
 
-**4. Restart the node.**
+## Copy the new neutron (v2.0.1) binary to cosmovisor current directory
+```shell
+   cp $GOPATH/bin/neutrond ~/.neutrond/cosmovisor/current/bin
+```
