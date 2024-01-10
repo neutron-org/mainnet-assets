@@ -35,7 +35,7 @@ There are two mutually exclusive options for this stage:
 
 * Stop the neutrond process.
 
-* Edit the application configuration file at `~/.neutron/config/app.toml` so that `halt-height` reflects the upgrade plan:
+* Edit the application configuration file at `~/.neutrond/config/app.toml` so that `halt-height` reflects the upgrade plan:
 
 ```toml
 # Note: Commitment of state will be attempted on the corresponding block.
@@ -43,7 +43,7 @@ halt-height = 5971800
 ```
 * Start neutrond process
 
-* Wait for the upgrade height, and proceed to Step 2.
+* Wait for the upgrade height and confirm that the node has halted
 
 ### Option 2: Restart the `neutrond` binary with command line flags
 
@@ -131,3 +131,10 @@ $ neutrond q wasm libwasmvm-version
 ```shell
    cp $GOPATH/bin/neutrond ~/.neutrond/cosmovisor/current/bin
 ```
+
+# Revert `neutrond` configurations
+
+Depending on which path you chose for Step 1, either:
+
+* Reset `halt-height = 0` option in the `app.toml` or
+* Remove it from start parameters of the neutrond binary and start node again
