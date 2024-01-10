@@ -1,10 +1,10 @@
 # Upgrade from Neutron v2.0.0 to v2.0.1
 
-> ## This is an important security update. IT IS CONSENSUS BREAKING, so please apply the fix only on height <TODO_HEIGHT>.
+> ## This is an important security update. IT IS CONSENSUS BREAKING, so please apply the fix only on height 5,971,800.
 
 ### Release Details
 * https://github.com/neutron-org/neutron/releases/tag/v2.0.1
-* Chain upgrade height : <TODO_HEIGHT>. Exact upgrade time can be checked [here](https://www.mintscan.io/neutron/blocks/<TODO_HEIGHT>).
+* Chain upgrade height : `5,971,800`. Exact upgrade time can be checked [here](https://www.mintscan.io/neutron/block/5971800).
 * Go version has been frozen at `1.20`. If you are going to build Neutron binary from source, make sure you are using the right GO version!
 
 # To upgrade neutron chain
@@ -39,7 +39,7 @@ There are two mutually exclusive options for this stage:
 
 ```toml
 # Note: Commitment of state will be attempted on the corresponding block.
-halt-height = <TODO_HEIGHT>
+halt-height = 5971800
 ```
 * Start neutrond process
 
@@ -51,7 +51,7 @@ halt-height = <TODO_HEIGHT>
 
 * Do not modify `app.toml`. Restart the `neutrond` process with the flag `--halt-height`:
 ```shell
-neutrond --halt-height <TODO_HEIGHT>
+neutrond --halt-height 5971800
 ```
 
 * Wait for the upgrade height and confirm that the node has halted
