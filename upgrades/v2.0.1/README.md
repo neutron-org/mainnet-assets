@@ -83,7 +83,7 @@ After performing these steps, the upgrade will proceed as usual using Cosmovisor
    name: neutron
    server_name: neutrond
    version: 2.0.1
-   commit: <TODO_COMMIT>
+   commit: 877a9f54d36551e2b8da6b07635e5baf6fc70f67
    ...
 ```
 
@@ -91,7 +91,7 @@ After performing these steps, the upgrade will proceed as usual using Cosmovisor
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-<TODO_HASH>  neutrond-linux-amd64
+0c80684535e722487a5642ea367e76f294aef7c012cf640403a3383c2904cf85  neutrond-linux-amd64
 ```
 
 ## Make sure you are using the proper version of libwasm
