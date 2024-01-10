@@ -42,13 +42,17 @@ $ shasum -a 256 neutrond-linux-amd64
 <TODO_HASH>  neutrond-linux-amd64
 ```
 
-## Copy the new neutron (v2.0.1) binary to cosmovisor current directory
+## Applying the patch
+
+**1. Stop the node**
+
+**2. Copy the new neutron (v2.0.1) binary to cosmovisor current directory**
 
 ```shell
    cp $GOPATH/bin/neutrond ~/.neutrond/cosmovisor/current/bin
 ```
 
-## Make sure you are using the proper version of libwasm
+**3. Make sure you are using the proper version of libwasm**
 
 You can check the version you are currently using by running the following command:
 ```
@@ -60,7 +64,8 @@ The proper version is `1.5.1`.
 
 **If the version on your machine is different you MUST change it immediately!**
 
-### Ways to change libwasmvm
+<details>
+<summary>Ways to change libwasmvm</summary>
 
 - Use a statically built Neutrond binary from an official Neutron release: [https://github.com/neutron-org/neutron/releases/tag/v2.0.1](https://github.com/neutron-org/neutron/releases/tag/v2.0.1)
 - If you built Neutron binary by yourself, `libwasmvm` should be loaded dynamically in your binary and somehow, the wrong `libwasmvm` library was present on your machine. You can change it by downloading the proper one and linking it to the Neutron binary manually:
@@ -80,6 +85,6 @@ $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/
 $ neutrond q wasm libwasmvm-version
 1.5.1
 ```
+</details>
 
-4. Stop the node;
-5. Restart the node.
+**4. Restart the node.**
