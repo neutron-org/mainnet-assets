@@ -1,9 +1,11 @@
 # Upgrade from Neutron v2.0.0 to v2.0.1
 
-> ## This is an important security update. It is not consensus breaking so please apply it to your validator ASAP.
+> ## This is an important security update. It **is consensus breaking**, so please apply it to your validator ASAP.
 
 ### Release Details
 * https://github.com/neutron-org/neutron/releases/tag/v2.0.1
+* Chain upgrade time: 10th of January 2024 3 PM UTC.
+* Go version has been frozen at `1.20`. If you are going to build Neutron binary from source, make sure you are using the right GO version!
 
 # Create the updated Neutron binary of v2.0.1
 
