@@ -64,24 +64,22 @@ The proper version is `1.5.1`.
 
 - Use a statically built Neutrond binary from an official Neutron release: [https://github.com/neutron-org/neutron/releases/tag/v2.0.1](https://github.com/neutron-org/neutron/releases/tag/v2.0.1)
 - If you built Neutron binary by yourself, `libwasmvm` should be loaded dynamically in your binary and somehow, the wrong `libwasmvm` library was present on your machine. You can change it by downloading the proper one and linking it to the Neutron binary manually:
-    1. download a proper version of `libwasmvm`:
+1. download a proper version of `libwasmvm`:
 
 ```
 $ wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.1/libwasmvm.x86_64.so
 ```
 
-1. tell the linker where to find it:
-
+2. tell the linker where to find it:
 ```
 $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/
 ```
 
-2. check that libwasmvm version is correct:
-
+3. check that libwasmvm version is correct:
 ```
 $ neutrond q wasm libwasmvm-version
 1.5.1
 ```
 
-3. Stop the node;
-4. Restart the node.
+4. Stop the node;
+5. Restart the node.
