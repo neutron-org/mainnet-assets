@@ -15,7 +15,6 @@ We need to disable automatic restart of the node service. To do so please alter 
 
 ```
 Restart=no 
-RestartSec=3      <- remove line
 
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=false"
@@ -131,6 +130,14 @@ $ neutrond q wasm libwasmvm-version
 ```shell
    cp $GOPATH/bin/neutrond ~/.neutrond/cosmovisor/current/bin
 ```
+
+## Restore service file settings
+
+If you are using a service file, restore the previous `Restart` settings in your service file: 
+```
+Restart=On-failure 
+```
+Reload the service control `sudo systemctl daemon-reload`.
 
 # Revert `neutrond` configurations
 
