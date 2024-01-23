@@ -149,17 +149,17 @@ The following state sync node serve snapshots every 2000 blocks:
 
 ### Software Versions
 
-| Name               | Version  |
-|--------------------|----------|
-| Neutron            | v1.0.1   |
-| Go                 | >1.20    |
+| Name               | Version |
+|--------------------|---------|
+| Neutron            | v2.0.1  |
+| Go                 | =1.20   |
 
 ### Node manual installation
 
 Build and install the Neutron binary. 
 
 ```bash
-$ git clone -b v1.0.1 https://github.com/neutron-org/neutron.git
+$ git clone -b v2.0.1 https://github.com/neutron-org/neutron.git
 $ cd neutron
 $ make install
 ```
@@ -171,7 +171,7 @@ $ neutrond version --long
 name: neutron
 server_name: neutrond
 version: 1.0.1 
-commit: c236f1045f866c341ec26f5c409c04d201a19cde
+commit: 1f3959118d4764aa8d264b2b382493faf12f4c07
 ```
 
 You can also download binary directly from our [official release](https://github.com/neutron-org/neutron/releases/tag/v1.0.1).
