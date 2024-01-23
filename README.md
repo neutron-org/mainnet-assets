@@ -170,8 +170,8 @@ After installation, please check installed version by running:
 $ neutrond version --long
 name: neutron
 server_name: neutrond
-version: 1.0.1 
-commit: 1f3959118d4764aa8d264b2b382493faf12f4c07
+version: 2.0.1 
+commit: 877a9f54d36551e2b8da6b07635e5baf6fc70f67
 ```
 
 You can also download binary directly from our [official release](https://github.com/neutron-org/neutron/releases/tag/v1.0.1).
