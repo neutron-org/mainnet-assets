@@ -1,6 +1,6 @@
 # Upgrade from Neutron v2.0.1 to v2.0.3
 
-> ## This is an important security update. IT IS CONSENSUS BREAKING, so please apply the fix only on height <HEIGHT>.
+> ## This is an important security update. IT IS CONSENSUS BREAKING, so please apply the fix only on height 7818500.
 
 ### Release Details
 * https://github.com/neutron-org/neutron/releases/tag/v2.0.3
