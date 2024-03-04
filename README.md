@@ -6,15 +6,15 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 
 ## Upgrades history
 
-| Version    | Value                             | Height                                                                                                                         |
-|------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| **v1.0.1** | Genesis version                   | From start                                                                                                                     |
-| **v1.0.2** | Security upgrade ([more info][1]) | Anytime, not breaks the consensus                                                                                              |
-| **v1.0.3** | Security upgrade ([more info][2]) | Coordinated **consensus breaking** upgrade without proposal at height 1236300                                                  |
-| **v1.0.4** | Security upgrade ([more info][3]) | Anytime before height #1909000, **consensus breaking**                                                                         |
-| **v2.0.0** | Upgrade ([more info][4])          | Coordinated **consensus breaking** upgrade with a [proposal 25](https://governance.neutron.org/proposals/25) at height 5416000 |
-| **v2.0.1** | Upgrade ([more info][5])          | Coordinated **consensus breaking security** upgrade without a proposal at 3 PM UTC on 10th of January 2024                     |
-| **v2.0.3** | Upgrade ([more info][6])          | Coordinated **consensus breaking security** upgrade without a proposal at 2:30 PM UTC on 5th of March 2024                     |
+| Version    | Value                             | Height                                                                                                                                     |
+|------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **v1.0.1** | Genesis version                   | From start                                                                                                                                 |
+| **v1.0.2** | Security upgrade ([more info][1]) | Anytime, not breaks the consensus                                                                                                          |
+| **v1.0.3** | Security upgrade ([more info][2]) | Coordinated **consensus breaking** upgrade without proposal at height 1236300                                                              |
+| **v1.0.4** | Security upgrade ([more info][3]) | Anytime before height #1909000, **consensus breaking**                                                                                     |
+| **v2.0.0** | Upgrade ([more info][4])          | Coordinated **consensus breaking** upgrade with a [proposal 25](https://governance.neutron.org/proposals/25) at height 5416000             |
+| **v2.0.1** | Upgrade ([more info][5])          | Coordinated **consensus breaking security** upgrade without a proposal on height 5971800 approximately at 3 PM UTC on 10th of January 2024 |
+| **v2.0.3** | Upgrade ([more info][6])          | Coordinated **consensus breaking security** upgrade without a proposal on height 7818500 approximately at 2:30 PM UTC on 5th of March 2024 |
 
 ## Parameters
 
