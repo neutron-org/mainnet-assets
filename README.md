@@ -6,14 +6,15 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 
 ## Upgrades history
 
-| Version    | Value                             | Height                                                                                                                         |
-|------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| **v1.0.1** | Genesis version                   | From start                                                                                                                     |
-| **v1.0.2** | Security upgrade ([more info][1]) | Anytime, not breaks the consensus                                                                                              |
-| **v1.0.3** | Security upgrade ([more info][2]) | Coordinated **consensus breaking** upgrade without proposal at height 1236300                                                  |
-| **v1.0.4** | Security upgrade ([more info][3]) | Anytime before height #1909000, **consensus breaking**                                                                         |
-| **v2.0.0** | Upgrade ([more info][4])          | Coordinated **consensus breaking** upgrade with a [proposal 25](https://governance.neutron.org/proposals/25) at height 5416000 |
-| **v2.0.1** | Upgrade ([more info][5])          | Coordinated **consensus breaking security** upgrade without a proposal at 3 PM UTC on 10th of January 2024                     |
+| Version    | Value                             | Height                                                                                                                                     |
+|------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| **v1.0.1** | Genesis version                   | From start                                                                                                                                 |
+| **v1.0.2** | Security upgrade ([more info][1]) | Anytime, not breaks the consensus                                                                                                          |
+| **v1.0.3** | Security upgrade ([more info][2]) | Coordinated **consensus breaking** upgrade without proposal at height 1236300                                                              |
+| **v1.0.4** | Security upgrade ([more info][3]) | Anytime before height #1909000, **consensus breaking**                                                                                     |
+| **v2.0.0** | Upgrade ([more info][4])          | Coordinated **consensus breaking** upgrade with a [proposal 25](https://governance.neutron.org/proposals/25) at height 5416000             |
+| **v2.0.1** | Upgrade ([more info][5])          | Coordinated **consensus breaking security** upgrade without a proposal on height 5971800 approximately at 3 PM UTC on 10th of January 2024 |
+| **v2.0.3** | Upgrade ([more info][6])          | Coordinated **consensus breaking security** upgrade without a proposal on height 7818500 approximately at 2:30 PM UTC on 5th of March 2024 |
 
 ## Parameters
 
@@ -151,7 +152,7 @@ The following state sync node serve snapshots every 2000 blocks:
 
 | Name               | Version |
 |--------------------|---------|
-| Neutron            | v2.0.1  |
+| Neutron            | v2.0.3  |
 | Go                 | =1.20   |
 
 ### Node manual installation
@@ -159,7 +160,7 @@ The following state sync node serve snapshots every 2000 blocks:
 Build and install the Neutron binary. 
 
 ```bash
-$ git clone -b v2.0.1 https://github.com/neutron-org/neutron.git
+$ git clone -b v2.0.3 https://github.com/neutron-org/neutron.git
 $ cd neutron
 $ make install
 ```
@@ -170,8 +171,8 @@ After installation, please check installed version by running:
 $ neutrond version --long
 name: neutron
 server_name: neutrond
-version: 2.0.1 
-commit: 877a9f54d36551e2b8da6b07635e5baf6fc70f67
+version: 2.0.3 
+commit: <COMMIT>
 ```
 
 You can also download binary directly from our [official release](https://github.com/neutron-org/neutron/releases/tag/v1.0.1).
@@ -181,3 +182,4 @@ You can also download binary directly from our [official release](https://github
 [3]:  ./upgrades/v1.0.4/README.md
 [4]:  ./upgrades/v2.0.0/README.md
 [5]: ./upgrades/v2.0.1/README.md
+[6]: ./upgrades/v2.0.3/README.md
