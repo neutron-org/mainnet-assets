@@ -15,6 +15,7 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 | **v2.0.0** | Upgrade ([more info][4])          | Coordinated **consensus breaking** upgrade with a [proposal 25](https://governance.neutron.org/proposals/25) at height 5416000             |
 | **v2.0.1** | Upgrade ([more info][5])          | Coordinated **consensus breaking security** upgrade without a proposal on height 5971800 approximately at 3 PM UTC on 10th of January 2024 |
 | **v2.0.3** | Upgrade ([more info][6])          | Coordinated **consensus breaking security** upgrade without a proposal on height 7818500 approximately at 2:30 PM UTC on 5th of March 2024 |
+| **v3.0.1** | Upgrade ([more info][7])          | Coordinated **consensus breaking** upgrade with a [proposal 34](https://governance.neutron.org/proposals/34) at height 8788500             |
 
 ## Parameters
 
@@ -183,3 +184,4 @@ You can also download binary directly from our [official release](https://github
 [4]:  ./upgrades/v2.0.0/README.md
 [5]: ./upgrades/v2.0.1/README.md
 [6]: ./upgrades/v2.0.3/README.md
+[7]: ./upgrades/v3.0.1/README.md
