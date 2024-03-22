@@ -6,15 +6,15 @@ order: 2
 
 # Neutron v3.0.1 Upgrade, Instructions
 
-* Chain upgrade point: `Apr 3rd 2024, 15:30 UTC` approximately at height `8,790,500`;
-* Go version: `v1.20`
+* Chain upgrade point: `Apr 10th 2024, 15:30 UTC` approximately at height `9,034,900`;
+* Go version: `v1.21`
 * Release: https://github.com/neutron-org/neutron/releases/tag/v3.0.1
 
 This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v3.0.1 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v3.0.1).
 
 ## Upgrade date
 
-The upgrade will take place approximately at `15:30 UTC` approximately at height `8790500`;
+The upgrade will take place approximately at `15:30 UTC` approximately at height `9034900`;
 
 ## Chain-id will remain the same
 
@@ -68,7 +68,7 @@ Make sure Neutron v3.0.1 is installed by either downloading a [compatible binary
 Run Neutron v2.0.3 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v3.0.1" NEEDED at height: 8790500: upgrade to v3.0.1 and applying upgrade "v3.0.1" at height:8790500
+ERR UPGRADE "v3.0.1" NEEDED at height: 9034900: upgrade to v3.0.1 and applying upgrade "v3.0.1" at height:9034900
 ```
 
 Stop the node, and switch the binary to Neutron v3.0.1 and re-start by `neutrond start`.
@@ -200,7 +200,7 @@ Skipping the invariant checks can help decrease the upgrade time significantly.
 When the upgrade block height is reached, you can find the following information in the log:
 
 ```shell
-ERR UPGRADE "v3.0.1" NEEDED at height: 8790500: upgrade to v3.0.1 and applying upgrade "v3.0.1" at height:8790500
+ERR UPGRADE "v3.0.1" NEEDED at height: 9034900: upgrade to v3.0.1 and applying upgrade "v3.0.1" at height:9034900
 ```
 
 Then the Cosmovisor will create `$NEUTRON_HOME/cosmovisor/upgrades/v3.0.1/bin` and download the Neuton v3.0.1 binary to this folder according to links in the `--info` field of the upgrade proposal.
@@ -220,7 +220,7 @@ During the network upgrade, core Neutron team will be keeping an ever vigilant e
 
 Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v2.0.3 binary using the following command:
 
-> neutrond start --unsafe-skip-upgrade 8790500
+> neutrond start --unsafe-skip-upgrade 9034900
 
 Note: There is no particular need to restore a state snapshot prior to the upgrade height, unless specifically directed by core Neutron team.
 
