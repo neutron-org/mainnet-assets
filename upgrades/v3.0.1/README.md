@@ -6,11 +6,14 @@ order: 2
 
 # Neutron v3.0.1 Upgrade, Instructions
 
+### **RELEASE v3.0.1 IS DEPRECATED, PLEASE USE v3.0.2 RELEASE BINARY FOR THIS UPGRADE**
+
+
 * Chain upgrade point: `Apr 10th 2024, 15:30 UTC` approximately at height `9,034,900`;
 * Go version: `v1.21`
-* Release: https://github.com/neutron-org/neutron/releases/tag/v3.0.1
+* Release: https://github.com/neutron-org/neutron/releases/tag/v3.0.2
 
-This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v3.0.1 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v3.0.1).
+This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v3.0.2 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v3.0.2).
 
 ## Upgrade date
 
@@ -48,7 +51,7 @@ The Neutron mainnet network, `neutron-1`, is currently running [Neutron v2.0.4](
 
 ### Target runtime
 
-The Neutron mainnet network, `neutron-1`, will run [Neutron v3.0.1](https://github.com/neutron-org/neutron/releases/tag/v3.0.1). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
+The Neutron mainnet network, `neutron-1`, will run [Neutron v3.0.1](https://github.com/neutron-org/neutron/releases/tag/v3.0.2). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
 
 ## Upgrade steps
 
@@ -63,7 +66,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ### Method I: Manual Upgrade
 
-Make sure Neutron v3.0.1 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v3.0.1), or building from source. Building from source requires **Golang 1.20.x**.
+Make sure Neutron v3.0.2 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v3.0.2), or building from source. Building from source requires **Golang 1.20.x**.
 
 Run Neutron v2.0.4 till upgrade height, the node will panic:
 
@@ -71,7 +74,7 @@ Run Neutron v2.0.4 till upgrade height, the node will panic:
 ERR UPGRADE "v3.0.1" NEEDED at height: 9034900: upgrade to v3.0.1 and applying upgrade "v3.0.1" at height:9034900
 ```
 
-Stop the node, and switch the binary to Neutron v3.0.1 and re-start by `neutrond start`.
+Stop the node, and switch the binary to **Neutron v3.0.2** and re-start by `neutrond start`.
 
 It may take several minutes to a few hours until validators with a total sum voting power > 2/3 to complete their node upgrades. After that, the chain can continue to produce blocks.
 
@@ -102,7 +105,7 @@ mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
 cp $(which neutrond) $NEUTRON_HOME/cosmovisor/genesis/bin
 ````
 
-build Neutron v3.0.1, and move neutrond v3.0.1 to `$NEUTRON_HOME/cosmovisor/upgrades/v3.0.1/bin`
+build **Neutron v3.0.2**, and move neutrond v3.0.1 to `$NEUTRON_HOME/cosmovisor/upgrades/v3.0.1/bin`
 
 ```shell
 mkdir -p  $NEUTRON_HOME/cosmovisor/upgrades/v3.0.1/bin
@@ -120,7 +123,7 @@ Then you should get the following structure:
 └── upgrades
     └── v3.0.1
         └── bin
-            └── neutrond  #v3.0.1
+            └── neutrond  #v3.0.2
 ```
 
 Export the environmental variables:
@@ -203,7 +206,7 @@ When the upgrade block height is reached, you can find the following information
 ERR UPGRADE "v3.0.1" NEEDED at height: 9034900: upgrade to v3.0.1 and applying upgrade "v3.0.1" at height:9034900
 ```
 
-Then the Cosmovisor will create `$NEUTRON_HOME/cosmovisor/upgrades/v3.0.1/bin` and download the Neuton v3.0.1 binary to this folder according to links in the `--info` field of the upgrade proposal.
+Then the Cosmovisor will create `$NEUTRON_HOME/cosmovisor/upgrades/v3.0.1/bin` and download the Neutron v3.0.2 binary to this folder according to links in the `--info` field of the upgrade proposal.
 This may take 7 minutes to a few hours, afterwards, the chain will continue to produce blocks once validators with a total sum voting power > 2/3 complete their nodes upgrades.
 
 _Please Note:_
