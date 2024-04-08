@@ -44,7 +44,7 @@ It is critically important for validator operators to back-up the `.neutrond/dat
 
 ### Current runtime
 
-The Neutron mainnet network, `neutron-1`, is currently running [Neutron v2.0.3](https://github.com/neutron-org/neutron/releases/tag/v2.0.3). We anticipate that operators who are running on v2.0.3, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.20`.
+The Neutron mainnet network, `neutron-1`, is currently running [Neutron v2.0.4](https://github.com/neutron-org/neutron/releases/tag/v2.0.4). We anticipate that operators who are running on v2.0.4, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.20`.
 
 ### Target runtime
 
@@ -65,7 +65,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 Make sure Neutron v3.0.1 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v3.0.1), or building from source. Building from source requires **Golang 1.20.x**.
 
-Run Neutron v2.0.3 till upgrade height, the node will panic:
+Run Neutron v2.0.4 till upgrade height, the node will panic:
 
 ```shell
 ERR UPGRADE "v3.0.1" NEEDED at height: 9034900: upgrade to v3.0.1 and applying upgrade "v3.0.1" at height:9034900
@@ -95,7 +95,7 @@ cosmovisor version: v1.5.0
 
 Create a cosmovisor folder:
 
-create a Cosmovisor folder inside `$NEUTRON_HOME` and move Neutron v2.0.3 into `$NEUTRON_HOME/cosmovisor/genesis/bin`
+create a Cosmovisor folder inside `$NEUTRON_HOME` and move Neutron v2.0.4 into `$NEUTRON_HOME/cosmovisor/genesis/bin`
 
 ```shell
 mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
@@ -116,7 +116,7 @@ Then you should get the following structure:
 ├── current -> genesis or upgrades/<name>
 ├── genesis
 │   └── bin
-│       └── neutrond  #v2.0.3
+│       └── neutrond  #v2.0.4
 └── upgrades
     └── v3.0.1
         └── bin
@@ -162,7 +162,7 @@ go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
 
 Create a cosmovisor folder:
 
-create a cosmovisor folder inside neutron home and move neutrond v2.0.3 into `$NEUTRON_HOME/cosmovisor/genesis/bin`
+create a cosmovisor folder inside neutron home and move neutrond v2.0.4 into `$NEUTRON_HOME/cosmovisor/genesis/bin`
 
 ```shell
 mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
@@ -174,7 +174,7 @@ cp $(which neutrond) $NEUTRON_HOME/cosmovisor/genesis/bin
 ├── current -> genesis or upgrades/<name>
 └── genesis
      └── bin
-        └── neutrond  #v2.0.3
+        └── neutrond  #v2.0.4
 ```
 
 Export the environmental variables:
@@ -209,7 +209,7 @@ This may take 7 minutes to a few hours, afterwards, the chain will continue to p
 _Please Note:_
 
 - In general, auto-download comes with the risk that the verification of correct download is done automatically. If users want to have the highest guarantee users should confirm the check-sum manually. We hope more node operators will use the auto-download for this release but please be aware this is a risk and users should take at your own discretion.
-- Users should run their node on v2.0.3 if they use the cosmovisor v1.5.0 with auto-download enabled for upgrade process.
+- Users should run their node on v2.0.4 if they use the cosmovisor v1.5.0 with auto-download enabled for upgrade process.
 
 ## Upgrade duration
 Most likely it takes a couple of minutes.
@@ -218,7 +218,7 @@ Most likely it takes a couple of minutes.
 
 During the network upgrade, core Neutron team will be keeping an ever vigilant eye and communicating with operators on the status of their upgrades. During this time, the core team will listen to operator needs to determine if the upgrade is experiencing unintended challenges. In the event of unexpected challenges, the core team, after conferring with operators and attaining social consensus, may choose to declare that the upgrade will be skipped.
 
-Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v2.0.3 binary using the following command:
+Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v2.0.4 binary using the following command:
 
 > neutrond start --unsafe-skip-upgrade 9034900
 
