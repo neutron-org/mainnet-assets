@@ -145,9 +145,8 @@ Skipping the invariant checks is strongly encouraged since it decreases the upgr
 
 #### Expected upgrade result
 
-When the upgrade block height is reached, Neutron will panic and stop:
+When the upgrade block height is reached, Neutron will panic and stop.
 
-This may take a few minutes to a few hours.
 After upgrade, the chain will continue to produce blocks when validators with a total sum voting power > 2/3 complete their node upgrades.
 
 ### Auto-Downloading the Neutron binary
