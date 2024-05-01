@@ -7,7 +7,7 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 ## Upgrades history
 
 | Version    | Value                             | Height                                                                                                                                     |
-|------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| ---------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **v1.0.1** | Genesis version                   | From start                                                                                                                                 |
 | **v1.0.2** | Security upgrade ([more info][1]) | Anytime, not breaks the consensus                                                                                                          |
 | **v1.0.3** | Security upgrade ([more info][2]) | Coordinated **consensus breaking** upgrade without proposal at height 1236300                                                              |
@@ -16,13 +16,14 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 | **v2.0.1** | Upgrade ([more info][5])          | Coordinated **consensus breaking security** upgrade without a proposal on height 5971800 approximately at 3 PM UTC on 10th of January 2024 |
 | **v2.0.3** | Upgrade ([more info][6])          | Coordinated **consensus breaking security** upgrade without a proposal on height 7818500 approximately at 2:30 PM UTC on 5th of March 2024 |
 | **v3.0.1** | Upgrade ([more info][7])          | Coordinated **consensus breaking** upgrade with a [proposal 35](https://governance.neutron.org/proposals/35) at height 9034900             |
+| **v3.0.5** | Upgrade ([more info][7])          | Coordinated **consensus breaking** upgrade with a [proposal 36](https://governance.neutron.org/proposals/36) at height 10280000            |
 
 ## Parameters
 
 Below are the `neutron-1` chain parameters:
 
 | Name                   | Value                         |
-|------------------------|-------------------------------|
+| ---------------------- | ----------------------------- |
 | **chain-id**           | `neutron-1`                   |
 | **denom**              | `untrn`                       |
 | **minimum-gas-prices** | `0.01untrn`                   |
@@ -36,8 +37,8 @@ Below are the `neutron-1` chain parameters:
 The release binary information is provided below:
 
 | Item                  | Description                                                            |
-|-----------------------|------------------------------------------------------------------------|
-| **GitHub repo**       | [neutron-org/neutron](https://github.com/neutron-org/neutron.git)      | 
+| --------------------- | ---------------------------------------------------------------------- |
+| **GitHub repo**       | [neutron-org/neutron](https://github.com/neutron-org/neutron.git)      |
 | **Release**           | [`v1.0.1`](https://github.com/neutron-org/neutron/releases/tag/v1.0.1) |
 | **Reference binary**  | [neutrond-linux-amd64](./neutrond-linux-amd64)                         |
 | **Checksum (sha256)** | b628d3eb1e0e12617b2c905f07dc39bd91d5dd3bd284a2a51d47c04cc3aa2e6d       |
@@ -55,11 +56,10 @@ You can check the difference [here](https://github.com/neutron-org/neutron/compa
 
 The final `genesis.json` information is provided below:
 
-| Item                  | Description                                                      |
-|-----------------------|------------------------------------------------------------------|
-| **Genesis**           | [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json)                         | 
-| **Checksum (sha256)** | 9496492c81b31befb59a4336d5ae4444c24b863721d21be143d7d4fdf8072c84 |
-
+| Item                  | Description                                                                                              |
+| --------------------- | -------------------------------------------------------------------------------------------------------- |
+| **Genesis**           | [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json) |
+| **Checksum (sha256)** | 9496492c81b31befb59a4336d5ae4444c24b863721d21be143d7d4fdf8072c84                                         |
 
 **⚠️ All validators are required use the [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json) file provided in this instruction.**
 
@@ -69,17 +69,13 @@ If you want to get a better idea of what was changed in the genesis since Propos
 
 #### `ccvconsumer` section updates
 
-Due to the upgrade of the Neutron's ICS dependency to [v1.2.0-multiden](https://github.com/cosmos/interchain-security/tree/v1.2.0-multiden), and due to using a version of ICS with soft opt-out,  there is 3 parameters that were added to the `ccvconsumer` section of the genesis:
+Due to the upgrade of the Neutron's ICS dependency to [v1.2.0-multiden](https://github.com/cosmos/interchain-security/tree/v1.2.0-multiden), and due to using a version of ICS with soft opt-out, there is 3 parameters that were added to the `ccvconsumer` section of the genesis:
 
 ```json
 {
   "soft_opt_out_threshold": "0.05",
-  "reward_denoms": [
-    "untrn"
-  ],
-  "provider_reward_denoms": [
-    "uatom"
-  ]
+  "reward_denoms": ["untrn"],
+  "provider_reward_denoms": ["uatom"]
 }
 ```
 
@@ -91,7 +87,7 @@ Due to the upgrade of the Neutron's ICS dependency to [v1.2.0-multiden](https://
 
 In the pre-genesis, we used incorrect `slashing` parameters. Below you can see the `slashing` parameters diff:
 
- ```
+```
 + "signed_blocks_window": "140000",
 + "min_signed_per_window": "0.050000000000000000",
 + "slash_fraction_downtime": "0.000100000000000000"
@@ -108,10 +104,9 @@ In the pre-genesis, we used incorrect `slashing` parameters. Below you can see t
 
 Neutron genesis instantiates dozens of smart contracts that are used by the Neutron DAO and the Neutron Token Generation Event. Since the time when Proposal 792 was published, we fixed some bugs and introduced some improvements to our smart contracts.
 
-We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/genesis.sh) that you can copy to an empty directory and run to get the final genesis. We provide this script **for information purposes only**, and we do not guarantee that it will work on your machine (although if you have a Mac and the Docker daemon is running, it should produce the final `genesis.json` within approximately 30 minutes because it will build all the `wasm` binaries). 
+We have a [script](https://github.com/neutron-org/tools/blob/mainnet/genesis/genesis.sh) that you can copy to an empty directory and run to get the final genesis. We provide this script **for information purposes only**, and we do not guarantee that it will work on your machine (although if you have a Mac and the Docker daemon is running, it should produce the final `genesis.json` within approximately 30 minutes because it will build all the `wasm` binaries).
 
 **⚠️ Please use the [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json) file provided above during the coordinated launch.**
-
 
 ## Endpoints
 
@@ -134,7 +129,6 @@ Persistent nodes:
 7. `ce526dc00568900d54dedf2fd2680ddfc7a58c59@138.201.124.215:36656`
 8. `5865c2bae7c0403c0c6d90c01556b1b2bb437ef8@51.89.195.173:26656`
 
-
 Also you can use this [addrbook.json](./addrbook.json) to bootstrap your nodes.
 
 The following state sync node serve snapshots every 2000 blocks:
@@ -145,20 +139,20 @@ The following state sync node serve snapshots every 2000 blocks:
 
 ### Hardware Requirements
 
-* 4 Cores
-* 32 GB RAM
-* 2x512 GB SSD
+- 4 Cores
+- 32 GB RAM
+- 2x512 GB SSD
 
 ### Software Versions
 
-| Name               | Version |
-|--------------------|---------|
-| Neutron            | v2.0.3  |
-| Go                 | =1.20   |
+| Name    | Version |
+| ------- | ------- |
+| Neutron | v2.0.3  |
+| Go      | =1.20   |
 
 ### Node manual installation
 
-Build and install the Neutron binary. 
+Build and install the Neutron binary.
 
 ```bash
 $ git clone -b v2.0.3 https://github.com/neutron-org/neutron.git
@@ -172,16 +166,16 @@ After installation, please check installed version by running:
 $ neutrond version --long
 name: neutron
 server_name: neutrond
-version: 2.0.3 
+version: 2.0.3
 commit: <COMMIT>
 ```
 
 You can also download binary directly from our [official release](https://github.com/neutron-org/neutron/releases/tag/v1.0.1).
 
-[1]:  ./upgrades/v1.0.2/README.md
-[2]:  ./upgrades/v1.0.3/README.md
-[3]:  ./upgrades/v1.0.4/README.md
-[4]:  ./upgrades/v2.0.0/README.md
+[1]: ./upgrades/v1.0.2/README.md
+[2]: ./upgrades/v1.0.3/README.md
+[3]: ./upgrades/v1.0.4/README.md
+[4]: ./upgrades/v2.0.0/README.md
 [5]: ./upgrades/v2.0.1/README.md
 [6]: ./upgrades/v2.0.3/README.md
 [7]: ./upgrades/v3.0.1/README.md
