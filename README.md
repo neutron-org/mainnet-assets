@@ -7,7 +7,7 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 ## Upgrades history
 
 | Version    | Value                             | Height                                                                                                                                     |
-| ---------- | --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+|------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | **v1.0.1** | Genesis version                   | From start                                                                                                                                 |
 | **v1.0.2** | Security upgrade ([more info][1]) | Anytime, not breaks the consensus                                                                                                          |
 | **v1.0.3** | Security upgrade ([more info][2]) | Coordinated **consensus breaking** upgrade without proposal at height 1236300                                                              |
@@ -17,6 +17,7 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 | **v2.0.3** | Upgrade ([more info][6])          | Coordinated **consensus breaking security** upgrade without a proposal on height 7818500 approximately at 2:30 PM UTC on 5th of March 2024 |
 | **v3.0.1** | Upgrade ([more info][7])          | Coordinated **consensus breaking** upgrade with a [proposal 35](https://governance.neutron.org/proposals/35) at height 9034900             |
 | **v3.0.5** | Upgrade ([more info][8])          | Coordinated **consensus breaking** upgrade with a [proposal 37](https://governance.neutron.org/proposals/37) at height 10525000            |
+| **v3.0.6** | Upgrade ([more info][9])          | Coordinated **consensus breaking security** upgrade without a proposal on height 11298600 approximately at 14:00 UTC on 14th of June 2024  |            |
 
 ## Parameters
 
@@ -180,3 +181,4 @@ You can also download binary directly from our [official release](https://github
 [6]: ./upgrades/v2.0.3/README.md
 [7]: ./upgrades/v3.0.1/README.md
 [8]: ./upgrades/v3.0.5/README.md
+[9]: ./upgrades/v3.0.6/README.md
