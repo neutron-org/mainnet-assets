@@ -9,6 +9,13 @@
 
 # To upgrade neutron chain
 
+### Backups
+
+Prior to the upgrade, validators are encouraged to take a full data snapshot. Snapshotting depends heavily on infrastructure, but generally this can be done by backing up the `.neutrond` directory.
+If you use Cosmovisor to upgrade, by default, Cosmovisor will backup your data upon upgrade.
+
+It is critically important for validator operators to back-up the `.neutrond/data/priv_validator_state.json` file after stopping the neutrond process. This file is updated every block as your validator participates in consensus rounds. It is a critical file needed to prevent double-signing, in case the upgrade fails and the previous chain needs to be restarted.
+
 ## Step 1: Alter systemd service configuration
 
 We need to disable automatic restart of the node service. To do so please alter your `neutrond.service` file configuration and set appropriate lines to following values.
