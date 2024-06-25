@@ -13,7 +13,7 @@ order: 2
 - Go version: `v1.22`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v4.0.1
 
-This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v3.0.5 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v3.0.5).
+This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v4.0.1 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v4.0.1).
 
 ## Upgrade date
 
