@@ -97,7 +97,7 @@ After performing these steps, the upgrade will proceed as usual using Cosmovisor
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-TODO_HASH  neutrond-linux-amd64
+81a270f7e47859bc36b75c48e363c9cd0dd785d6f87742929d9e1f0a19bb41c4  neutrond-linux-amd64
 ```
 
 ## Copy the new neutron (v4.1.0) binary to cosmovisor current directory
