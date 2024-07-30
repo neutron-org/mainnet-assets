@@ -1,6 +1,6 @@
 # Upgrade from Neutron v4.0.1 to v4.1.0
 
-> ## This is an important security update. IT IS CONSENSUS BREAKING UPGRADE! Please apply the fix only at height 11298600.
+> ## This is an important security update. IT IS CONSENSUS BREAKING UPGRADE! Please apply the fix only at height TODO_HEIGHT.
 
 ### Release Details
 * https://github.com/neutron-org/neutron/releases/tag/v4.1.0
