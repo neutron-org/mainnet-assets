@@ -100,9 +100,30 @@ $ shasum -a 256 neutrond-linux-amd64
 81a270f7e47859bc36b75c48e363c9cd0dd785d6f87742929d9e1f0a19bb41c4  neutrond-linux-amd64
 ```
 
-## Copy the new neutron (v4.1.0) binary to cosmovisor current directory
+## Copy the new neutron (v4.1.0) binary to cosmovisor upgrade directory
+Add a new emergency upgrade to cosmovisor with
 ```shell
-   cp $GOPATH/bin/neutrond ~/.neutrond/cosmovisor/current/bin
+cosmovisor add-upgrade v4.1.0 $(which neutrond) --upgrade-height 12947300
+```
+
+if an error `file already exists at <neutrond_home>/data/upgrade-info.json` happens, try to add a force flag
+
+```shell
+cosmovisor add-upgrade v4.1.0 $(which neutrond) --upgrade-height 12947300 --force
+```
+
+Then you should get the following structure:
+
+```shell
+.
+├── current -> genesis or upgrades/<name>
+├── genesis
+│   └── bin
+│       └── neutrond  #v3.0.6
+└── upgrades
+    └── v4.1.0
+        └── bin
+            └── neutrond  #v4.1.0
 ```
 
 ## Restore service file settings
