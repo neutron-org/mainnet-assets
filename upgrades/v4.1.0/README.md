@@ -89,7 +89,7 @@ After performing these steps, the upgrade will proceed as usual using Cosmovisor
    name: neutron
    server_name: neutrond
    version: 4.1.0
-   commit: TODO_COMMIT
+   commit: db33d3302abb45ee3887a97ea3d53923241fc167
    ...
 ```
 
