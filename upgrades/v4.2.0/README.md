@@ -4,7 +4,7 @@
 
 ### Release Details
 * https://github.com/neutron-org/neutron/releases/tag/v4.2.0
-* Chain upgrade time `August 9th 2024, 12:00 UTC`
+* Chain upgrade time `August 8th 2024, 12:00 UTC`
 * Chain upgrade height: `13261000`. Exact upgrade time can be checked [here](https://www.mintscan.io/neutron/block/13261000).
 * Go version has been frozen at `1.22`. If you are going to build Neutron binary from source, make sure you are using the right GO version!
 
