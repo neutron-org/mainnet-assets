@@ -106,7 +106,7 @@ TODO_SHA256SUM  neutrond-linux-amd64
    cp $GOPATH/bin/neutrond ~/.neutrond/cosmovisor/current/bin
 ```
 
-Alternative way to configure cosmovisor
+Alternative way to configure cosmovisor is to create `upgrade-info.json` instructions manually.
 ```shell
 cosmovisor add-upgrade v4.2.0 $(which neutrond) --upgrade-height 13261000 --force
 ```
