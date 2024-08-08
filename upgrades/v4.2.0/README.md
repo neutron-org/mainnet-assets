@@ -106,6 +106,8 @@ TODO_SHA256SUM  neutrond-linux-amd64
    cp $GOPATH/bin/neutrond ~/.neutrond/cosmovisor/current/bin
 ```
 
+Keep in mind if the `upgrade-info.json` file is present in neutron home directory, cosmovisor may set back binary from the upgrade file as a current bin. In case this happens, delete the upgrade file.
+
 ## Restore service file settings
 
 If you are using a service file, restore the previous `Restart` settings in your service file: 
