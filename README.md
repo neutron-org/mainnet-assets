@@ -171,7 +171,7 @@ $ neutrond version --long
 name: neutron
 server_name: neutrond
 version: 4.2.0
-commit: <COMMIT>
+commit: 01b71f7f682b75aec78aecdf5604c914b6421c6a
 ```
 
 You can also download binary directly from our [official release](https://github.com/neutron-org/neutron/releases/tag/v4.2.0).
