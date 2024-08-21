@@ -89,7 +89,7 @@ After performing these steps, the upgrade will proceed as usual using Cosmovisor
    name: neutron
    server_name: neutrond
    version: 4.2.1
-   commit: <TODO_COMMIT>
+   commit: ac620c19ae88c9d8697190664f709931f33b007d
    ...
 ```
 
@@ -97,7 +97,7 @@ After performing these steps, the upgrade will proceed as usual using Cosmovisor
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-<TODO_HASH>  neutrond-linux-amd64
+2ac6a50e5a85865214ccfb8a742ad56875279b7f45fa7e45b296243c15bf9fc3  neutrond-linux-amd64
 ```
 
 
