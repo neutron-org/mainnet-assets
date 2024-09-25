@@ -131,7 +131,7 @@ $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/
 3. check that libwasmvm version is correct:
 ```
 $ neutrond q wasm libwasmvm-version
-2.0.3
+2.0.4
 ```
 
 ## Copy the new neutron (v4.2.4) binary to cosmovisor current directory
