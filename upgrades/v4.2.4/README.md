@@ -1,6 +1,6 @@
 # Upgrade from Neutron v4.2.3 to v4.2.4
 
-> ## This is an important security update. IT IS CONSENSUS BREAKING UPGRADE! Please apply the fix only at height 14638000.
+> ## This is an important security update. IT IS CONSENSUS BREAKING UPGRADE! Please apply the fix only at height 14970700.
 
 ### Release Details
 * https://github.com/neutron-org/neutron/releases/tag/v4.2.4
