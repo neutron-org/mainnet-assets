@@ -7,15 +7,17 @@ order: 2
 
 # Neutron v5.0.0 Upgrade, Instructions
 
+### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE V5.0.1 BINARY FOR THIS UPGRADE
+
 - Chain upgrade point: `November 14th 2024, 14:30 UTC` approximately at height `16738000`;
 - Go version: `v1.22`
-- Release: https://github.com/neutron-org/neutron/releases/tag/v5.0.0
+- Release: https://github.com/neutron-org/neutron/releases/tag/v5.0.1
 
-This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.0.0 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.0.0).
+This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.0.0 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.0.1).
 
 ## Upgrade date
 
-The upgrade will take place approximately on November 14th at `14:30 UTC` approximately at height `16738000`;
+The upgrade will take place approximately on November 14th at `15:30 UTC` approximately at height `16738000`;
 
 ## Chain-id will remain the same
 
@@ -49,7 +51,7 @@ The Neutron mainnet network, `neutron-1`, is currently running [Neutron v4.2.4](
 
 ### Target runtime
 
-The Neutron mainnet network, `neutron-1`, will run [Neutron v5.0.0](https://github.com/neutron-org/neutron/releases/tag/v5.0.0). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
+The Neutron mainnet network, `neutron-1`, will run [Neutron v5.0.0](https://github.com/neutron-org/neutron/releases/tag/v5.0.1). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
 
 ## Upgrade steps
 
@@ -57,14 +59,14 @@ There are 2 major ways to upgrade a node:
 
 - Manual upgrade
 - Upgrade using [Cosmovisor](https://pkg.go.dev/cosmossdk.io/tools/cosmovisor)
-  - Either by manually preparing the new binary
-  - Or by using the auto-download functionality (this is not yet recommended)
+    - Either by manually preparing the new binary
+    - Or by using the auto-download functionality (this is not yet recommended)
 
 If you prefer to use Cosmovisor to upgrade, some preparation work is needed before upgrade.
 
 ### Method I: Manual Upgrade
 
-Make sure Neutron v5.0.0 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v5.0.0), or building from source. Building from source requires **Golang 1.22.x**.
+Make sure Neutron v5.0.1 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v5.0.1), or building from source. Building from source requires **Golang 1.22.x**.
 
 Run Neutron v4.2.4 till upgrade height, the node will panic:
 
@@ -104,7 +106,7 @@ mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
 cp $(which neutrond) $NEUTRON_HOME/cosmovisor/genesis/bin
 ```
 
-build **Neutron v5.0.0**, and move neutrond v5.0.0 to `$NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin`
+build **Neutron v5.0.0**, and move neutrond v5.0.1 to `$NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin`
 
 ```shell
 mkdir -p  $NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin
