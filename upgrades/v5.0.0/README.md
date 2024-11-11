@@ -13,7 +13,7 @@ order: 2
 - Go version: `v1.22`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v5.0.1
 
-This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.0.0 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.0.1).
+This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.0.1 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.0.1).
 
 ## Upgrade date
 
@@ -51,7 +51,7 @@ The Neutron mainnet network, `neutron-1`, is currently running [Neutron v4.2.4](
 
 ### Target runtime
 
-The Neutron mainnet network, `neutron-1`, will run [Neutron v5.0.0](https://github.com/neutron-org/neutron/releases/tag/v5.0.1). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
+The Neutron mainnet network, `neutron-1`, will run [Neutron v5.0.1](https://github.com/neutron-org/neutron/releases/tag/v5.0.1). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
 
 ## Upgrade steps
 
@@ -74,7 +74,7 @@ Run Neutron v4.2.4 till upgrade height, the node will panic:
 ERR UPGRADE "v5.0.0" NEEDED at height: 16738000: upgrade to v5.0.0 and applying upgrade "v5.0.0" at height: 16705000
 ```
 
-Stop the node, and switch the binary to **Neutron v5.0.0** and re-start by `neutrond start`.
+Stop the node, and switch the binary to **Neutron v5.0.1** and re-start by `neutrond start`.
 
 It may take several minutes to a few hours until validators with a total sum voting power > 2/3 to complete their node upgrades. After that, the chain can continue to produce blocks.
 
@@ -106,7 +106,7 @@ mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
 cp $(which neutrond) $NEUTRON_HOME/cosmovisor/genesis/bin
 ```
 
-build **Neutron v5.0.0**, and move neutrond v5.0.1 to `$NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin`
+build **Neutron v5.0.1**, and move neutrond v5.0.1 to `$NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin`
 
 ```shell
 mkdir -p  $NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin
