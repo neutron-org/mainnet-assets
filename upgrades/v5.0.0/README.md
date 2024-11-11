@@ -151,69 +151,6 @@ When the upgrade block height is reached, Neutron will panic and stop.
 
 After upgrade, the chain will continue to produce blocks when validators with a total sum voting power > 2/3 complete their node upgrades.
 
-### Auto-Downloading the Neutron binary
-
-**This method is not recommended!**
-
-#### Preparation
-
-Install the latest version of Cosmovisor (`1.5.0`):
-
-```shell
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-```
-
-Create a cosmovisor folder:
-
-create a cosmovisor folder inside neutron home and move neutrond v4.2.4 into `$NEUTRON_HOME/cosmovisor/genesis/bin`
-
-```shell
-mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
-cp $(which neutrond) $NEUTRON_HOME/cosmovisor/genesis/bin
-```
-
-```shell
-.
-├── current -> genesis or upgrades/<name>
-└── genesis
-     └── bin
-        └── neutrond  #v4.2.4
-```
-
-Export the environmental variables:
-
-```shell
-export DAEMON_NAME=neutrond
-# please change to your own neutron home dir
-export DAEMON_HOME=$NEUTRON_HOME
-export DAEMON_RESTART_AFTER_UPGRADE=true
-export DAEMON_ALLOW_DOWNLOAD_BINARIES=true
-```
-
-Start the node:
-
-```shell
-cosmovisor run start --x-crisis-skip-assert-invariants --home $DAEMON_HOME
-```
-
-Skipping the invariant checks can help decrease the upgrade time significantly.
-
-#### Expected result
-
-When the upgrade block height is reached, you can find the following information in the log:
-
-```shell
-ERR UPGRADE "v5.0.0" NEEDED at height: 16738000: upgrade to v5.0.0 and applying upgrade "v5.0.0" at height:16738000
-```
-
-Then the Cosmovisor will create `$NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin` and download the Neutron v5.0.0 binary to this folder according to links in the `--info` field of the upgrade proposal.
-This may take 7 minutes to a few hours, afterwards, the chain will continue to produce blocks once validators with a total sum voting power > 2/3 complete their nodes upgrades.
-
-_Please Note:_
-
-- In general, auto-download comes with the risk that the verification of correct download is done automatically. If users want to have the highest guarantee users should confirm the check-sum manually. We hope more node operators will use the auto-download for this release but please be aware this is a risk and users should take at your own discretion.
-- Users should run their node on v4.2.4 if they use the cosmovisor v1.5.0 with auto-download enabled for upgrade process.
-
 ## Upgrade duration
 
 Most likely it takes a couple of minutes.
