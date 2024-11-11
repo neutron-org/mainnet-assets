@@ -7,15 +7,17 @@ order: 2
 
 # Neutron v5.0.0 Upgrade, Instructions
 
+### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE V5.0.1 BINARY FOR THIS UPGRADE
+
 - Chain upgrade point: `November 14th 2024, 14:30 UTC` approximately at height `16738000`;
 - Go version: `v1.22`
-- Release: https://github.com/neutron-org/neutron/releases/tag/v5.0.0
+- Release: https://github.com/neutron-org/neutron/releases/tag/v5.0.1
 
-This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.0.0 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.0.0).
+This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.0.1 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.0.1).
 
 ## Upgrade date
 
-The upgrade will take place approximately on November 14th at `14:30 UTC` approximately at height `16738000`;
+The upgrade will take place approximately on November 14th at `15:30 UTC` approximately at height `16738000`;
 
 ## Chain-id will remain the same
 
@@ -49,7 +51,7 @@ The Neutron mainnet network, `neutron-1`, is currently running [Neutron v4.2.4](
 
 ### Target runtime
 
-The Neutron mainnet network, `neutron-1`, will run [Neutron v5.0.0](https://github.com/neutron-org/neutron/releases/tag/v5.0.0). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
+The Neutron mainnet network, `neutron-1`, will run [Neutron v5.0.1](https://github.com/neutron-org/neutron/releases/tag/v5.0.1). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
 
 ## Upgrade steps
 
@@ -57,14 +59,14 @@ There are 2 major ways to upgrade a node:
 
 - Manual upgrade
 - Upgrade using [Cosmovisor](https://pkg.go.dev/cosmossdk.io/tools/cosmovisor)
-  - Either by manually preparing the new binary
-  - Or by using the auto-download functionality (this is not yet recommended)
+    - Either by manually preparing the new binary
+    - Or by using the auto-download functionality (this is not yet recommended)
 
 If you prefer to use Cosmovisor to upgrade, some preparation work is needed before upgrade.
 
 ### Method I: Manual Upgrade
 
-Make sure Neutron v5.0.0 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v5.0.0), or building from source. Building from source requires **Golang 1.22.x**.
+Make sure Neutron v5.0.1 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v5.0.1), or building from source. Building from source requires **Golang 1.22.x**.
 
 Run Neutron v4.2.4 till upgrade height, the node will panic:
 
@@ -72,7 +74,7 @@ Run Neutron v4.2.4 till upgrade height, the node will panic:
 ERR UPGRADE "v5.0.0" NEEDED at height: 16738000: upgrade to v5.0.0 and applying upgrade "v5.0.0" at height: 16705000
 ```
 
-Stop the node, and switch the binary to **Neutron v5.0.0** and re-start by `neutrond start`.
+Stop the node, and switch the binary to **Neutron v5.0.1** and re-start by `neutrond start`.
 
 It may take several minutes to a few hours until validators with a total sum voting power > 2/3 to complete their node upgrades. After that, the chain can continue to produce blocks.
 
@@ -104,7 +106,7 @@ mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
 cp $(which neutrond) $NEUTRON_HOME/cosmovisor/genesis/bin
 ```
 
-build **Neutron v5.0.0**, and move neutrond v5.0.0 to `$NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin`
+build **Neutron v5.0.1**, and move neutrond v5.0.1 to `$NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin`
 
 ```shell
 mkdir -p  $NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin
@@ -122,7 +124,7 @@ Then you should get the following structure:
 └── upgrades
     └── v5.0.0
         └── bin
-            └── neutrond  #v5.0.0
+            └── neutrond  #v5.0.1
 ```
 
 Export the environmental variables:
@@ -148,69 +150,6 @@ Skipping the invariant checks is strongly encouraged since it decreases the upgr
 When the upgrade block height is reached, Neutron will panic and stop.
 
 After upgrade, the chain will continue to produce blocks when validators with a total sum voting power > 2/3 complete their node upgrades.
-
-### Auto-Downloading the Neutron binary
-
-**This method is not recommended!**
-
-#### Preparation
-
-Install the latest version of Cosmovisor (`1.5.0`):
-
-```shell
-go install cosmossdk.io/tools/cosmovisor/cmd/cosmovisor@v1.5.0
-```
-
-Create a cosmovisor folder:
-
-create a cosmovisor folder inside neutron home and move neutrond v4.2.4 into `$NEUTRON_HOME/cosmovisor/genesis/bin`
-
-```shell
-mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
-cp $(which neutrond) $NEUTRON_HOME/cosmovisor/genesis/bin
-```
-
-```shell
-.
-├── current -> genesis or upgrades/<name>
-└── genesis
-     └── bin
-        └── neutrond  #v4.2.4
-```
-
-Export the environmental variables:
-
-```shell
-export DAEMON_NAME=neutrond
-# please change to your own neutron home dir
-export DAEMON_HOME=$NEUTRON_HOME
-export DAEMON_RESTART_AFTER_UPGRADE=true
-export DAEMON_ALLOW_DOWNLOAD_BINARIES=true
-```
-
-Start the node:
-
-```shell
-cosmovisor run start --x-crisis-skip-assert-invariants --home $DAEMON_HOME
-```
-
-Skipping the invariant checks can help decrease the upgrade time significantly.
-
-#### Expected result
-
-When the upgrade block height is reached, you can find the following information in the log:
-
-```shell
-ERR UPGRADE "v5.0.0" NEEDED at height: 16738000: upgrade to v5.0.0 and applying upgrade "v5.0.0" at height:16738000
-```
-
-Then the Cosmovisor will create `$NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin` and download the Neutron v3.0.5 binary to this folder according to links in the `--info` field of the upgrade proposal.
-This may take 7 minutes to a few hours, afterwards, the chain will continue to produce blocks once validators with a total sum voting power > 2/3 complete their nodes upgrades.
-
-_Please Note:_
-
-- In general, auto-download comes with the risk that the verification of correct download is done automatically. If users want to have the highest guarantee users should confirm the check-sum manually. We hope more node operators will use the auto-download for this release but please be aware this is a risk and users should take at your own discretion.
-- Users should run their node on v3.0.2 if they use the cosmovisor v1.5.0 with auto-download enabled for upgrade process.
 
 ## Upgrade duration
 
