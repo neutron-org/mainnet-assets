@@ -124,7 +124,7 @@ Then you should get the following structure:
 └── upgrades
     └── v5.0.0
         └── bin
-            └── neutrond  #v5.0.0
+            └── neutrond  #v5.0.1
 ```
 
 Export the environmental variables:
@@ -206,13 +206,13 @@ When the upgrade block height is reached, you can find the following information
 ERR UPGRADE "v5.0.0" NEEDED at height: 16738000: upgrade to v5.0.0 and applying upgrade "v5.0.0" at height:16738000
 ```
 
-Then the Cosmovisor will create `$NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin` and download the Neutron v3.0.5 binary to this folder according to links in the `--info` field of the upgrade proposal.
+Then the Cosmovisor will create `$NEUTRON_HOME/cosmovisor/upgrades/v5.0.0/bin` and download the Neutron v5.0.0 binary to this folder according to links in the `--info` field of the upgrade proposal.
 This may take 7 minutes to a few hours, afterwards, the chain will continue to produce blocks once validators with a total sum voting power > 2/3 complete their nodes upgrades.
 
 _Please Note:_
 
 - In general, auto-download comes with the risk that the verification of correct download is done automatically. If users want to have the highest guarantee users should confirm the check-sum manually. We hope more node operators will use the auto-download for this release but please be aware this is a risk and users should take at your own discretion.
-- Users should run their node on v3.0.2 if they use the cosmovisor v1.5.0 with auto-download enabled for upgrade process.
+- Users should run their node on v4.2.4 if they use the cosmovisor v1.5.0 with auto-download enabled for upgrade process.
 
 ## Upgrade duration
 
