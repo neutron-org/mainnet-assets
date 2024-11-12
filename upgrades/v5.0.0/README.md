@@ -64,6 +64,75 @@ There are 2 major ways to upgrade a node:
 
 If you prefer to use Cosmovisor to upgrade, some preparation work is needed before upgrade.
 
+## Create the updated Neutron binary of v5.0.1
+
+### Go to neutron directory if present else clone the repository
+
+```shell
+   git clone https://github.com/neutron-org/neutron.git
+```
+
+### Follow these steps if neutron repo already present
+
+```shell
+   cd $HOME/neutron
+   git pull
+   git fetch --tags
+   git checkout v5.0.1
+   make install
+```
+
+### Check the new neutron version, verify the latest commit hash
+```shell
+   $ neutrond version --long
+   name: neutron
+   server_name: neutrond
+   version: 5.0.1
+   commit: 954660e40667a67dba1fb68dc347ba1ec90f9c1f
+   ...
+```
+
+### Or check checksum of the binary if you decided to [download it](https://github.com/neutron-org/neutron/releases/tag/v5.0.1)
+
+```shell
+$ shasum -a 256 neutrond-linux-amd64
+4cb48cf146be021f9e4a2a748eaa4fc2bf0979704a7ee5b25c761b9431060570  neutrond-linux-amd64
+```
+
+
+### Make sure you are using the proper version of libwasm
+
+You can check the version you are currently using by running the following command:
+```
+$ neutrond q wasm libwasmvm-version
+
+2.1.3
+```
+The proper version is `2.1.3`.
+
+**If the version on your machine is different you MUST change it immediately!**
+
+#### Ways to change libwasmvm
+
+- Use a statically built Neutrond binary from an official Neutron release: [https://github.com/neutron-org/neutron/releases/tag/v5.0.1](https://github.com/neutron-org/neutron/releases/tag/v5.0.1)
+- If you built Neutron binary by yourself, `libwasmvm` should be loaded dynamically in your binary and somehow, the wrong `libwasmvm` library was present on your machine. You can change it by downloading the proper one and linking it to the Neutron binary manually:
+1. download a proper version of `libwasmvm`:
+
+```
+$ wget https://github.com/CosmWasm/wasmvm/releases/download/v2.1.3/libwasmvm.x86_64.so
+```
+
+2. tell the linker where to find it:
+```
+$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/
+```
+
+3. check that libwasmvm version is correct:
+```
+$ neutrond q wasm libwasmvm-version
+2.1.3
+```
+
 ### Method I: Manual Upgrade
 
 Make sure Neutron v5.0.1 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v5.0.1), or building from source. Building from source requires **Golang 1.22.x**.
