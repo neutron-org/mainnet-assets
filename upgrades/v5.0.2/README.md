@@ -13,7 +13,7 @@ order: 2
 - Go version: `v1.22`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v5.0.2
 
-This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.0.1 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.0.1).
+This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.0.2 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.0.2).
 
 ## Upgrade date
 
@@ -140,7 +140,7 @@ Make sure Neutron v5.0.1 is installed by either downloading a [compatible binary
 Run Neutron v5.0.1 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v5.0.0" NEEDED at height: 17177900: upgrade to v5.0.0 and applying upgrade "v5.0.0" at height: 16705000
+ERR UPGRADE "v5.0.2" NEEDED at height: 17177900: upgrade to v5.0.2 and applying upgrade "v5.0.2" at height: 17177900
 ```
 
 Stop the node, and switch the binary to **Neutron v5.0.1** and re-start by `neutrond start`.
@@ -222,7 +222,7 @@ After upgrade, the chain will continue to produce blocks when validators with a 
 
 ## Upgrade duration
 
-Most likely it takes a couple of minutes.
+Most likely it takes around 20 minutes, given that all nodes will stop at halt time, and we mind need to wait for larger validators to come back online..
 
 ## Rollback plan
 
