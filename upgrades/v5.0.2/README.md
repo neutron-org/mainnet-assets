@@ -49,7 +49,7 @@ The Neutron mainnet network, `neutron-1`, is currently running [Neutron v5.0.1](
 
 ### Target runtime
 
-The Neutron mainnet network, `neutron-1`, will run [Neutron v5.0.1](https://github.com/neutron-org/neutron/releases/tag/v5.0.1). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
+The Neutron mainnet network, `neutron-1`, will run [Neutron v5.0.2](https://github.com/neutron-org/neutron/releases/tag/v5.0.2). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
 
 ## Upgrade steps
 
@@ -112,7 +112,7 @@ The proper version is `2.1.3`.
 
 #### Ways to change libwasmvm
 
-- Use a statically built Neutrond binary from an official Neutron release: [https://github.com/neutron-org/neutron/releases/tag/v5.0.1](https://github.com/neutron-org/neutron/releases/tag/v5.0.1)
+- Use a statically built Neutrond binary from an official Neutron release: [https://github.com/neutron-org/neutron/releases/tag/v5.0.2](https://github.com/neutron-org/neutron/releases/tag/v5.0.2)
 - If you built Neutron binary by yourself, `libwasmvm` should be loaded dynamically in your binary and somehow, the wrong `libwasmvm` library was present on your machine. You can change it by downloading the proper one and linking it to the Neutron binary manually:
 1. download a proper version of `libwasmvm`:
 
@@ -141,7 +141,7 @@ Run Neutron v5.0.1 till upgrade height, the node will panic:
 ERR UPGRADE "v5.0.2" NEEDED at height: 17177900: upgrade to v5.0.2 and applying upgrade "v5.0.2" at height: 17177900
 ```
 
-Stop the node, and switch the binary to **Neutron v5.0.1** and re-start by `neutrond start`.
+Stop the node, and switch the binary to **Neutron v5.0.2** and re-start by `neutrond start`.
 
 It may take several minutes to a few hours until validators with a total sum voting power > 2/3 to complete their node upgrades. After that, the chain can continue to produce blocks.
 
