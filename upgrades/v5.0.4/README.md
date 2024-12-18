@@ -120,7 +120,7 @@ The proper version is `2.1.4`.
 1. download a proper version of `libwasmvm`:
 
 ```
-$ wget https://github.com/CosmWasm/wasmvm/releases/download/v2.1.3/libwasmvm.x86_64.so
+$ wget https://github.com/CosmWasm/wasmvm/releases/download/v2.1.4/libwasmvm.x86_64.so
 ```
 
 2. tell the linker where to find it:
@@ -131,7 +131,7 @@ $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/
 3. check that libwasmvm version is correct:
 ```
 $ neutrond q wasm libwasmvm-version
-2.1.3
+2.1.4
 ```
 
 ### Method I: Manual Upgrade
