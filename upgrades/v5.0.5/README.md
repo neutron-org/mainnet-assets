@@ -47,8 +47,6 @@ It is critically important for validator operators to back-up the `.neutrond/dat
 
 The Neutron mainnet network, `neutron-1`, is currently running [Neutron v5.0.4](https://github.com/neutron-org/neutron/releases/tag/v5.0.4). We anticipate that operators who are running on v5.0.4, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.22`.
 
-_Note: the v5.0.3 release that can be found in the Neutron repo was created only for RPC nodes, and we do no expect validators to be running it._
-
 ### Target runtime
 
 The Neutron mainnet network, `neutron-1`, will run [Neutron v5.0.5](https://github.com/neutron-org/neutron/releases/tag/v5.0.5). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
@@ -82,24 +80,22 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
    make install
 ```
 
-TODO
 ### Check the new neutron version, verify the latest commit hash
 ```shell
    $ neutrond version --long
-    commit: 4ae1215c197f5d00f2462f5ce48cf1eaf68bf938
-    cosmos_sdk_version: v0.50.11-neutron
-    go: go version go1.22.9 linux/amd64
-    name: neutron
-    version: 5.0.4
+   commit: cdd4fd6fcee5baf2d6ae79dac0e6b12aa847aff2
+   cosmos_sdk_version: v0.50.11-neutron
+   go: go version go1.22.9 linux/amd64
+   name: neutron
+   version: 5.0.5
    ...
 ```
 
 ### Or check checksum of the binary if you decided to [download it](https://github.com/neutron-org/neutron/releases/tag/v5.0.5)
 
-TODO
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-40663d2a113d639eedfc29670d0c4996c5143386dabfd559624b4a9679959a03  neutrond-linux-amd64
+1e2aa2ab56e60bc3bdda7bdd0b505c02e8a304c5874ce2d907d01d26ee825b9b  neutrond-linux-amd64
 ```
 
 
