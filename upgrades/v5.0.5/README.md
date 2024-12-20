@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v5.0.5 Upgrade, Instructions
 
-- Chain upgrade point: at height `18125000`, `December 23rd 2024, 14:00 UTC` (approximately);
+- Chain upgrade point: at height `18125000`, `December 23rd 2024, 17:00 UTC` (approximately);
 - Go version: `v1.22`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v5.0.5
 
