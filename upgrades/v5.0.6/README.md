@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v5.0.6 Upgrade, Instructions
 
-- This is an **emergency upgrade** necessary to **un-halt the chain** on January 14, 2025
+- This is an **emergency upgrade** necessary to **un-halt the chain** on January 14, 2025.
 - Go version: `v1.22`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v5.0.6
 
@@ -40,7 +40,7 @@ _Note: Prior to the upgrade, validators are encouraged to take a full data snaps
 ### Check the new neutron version, verify the latest commit hash
 ```shell
    $ neutrond version --long
-   commit: cdd4fd6fcee5baf2d6ae79dac0e6b12aa847aff2TODO
+   commit: c0d07d71c2ed5fc9a39706cc1205650527cef8d3
    cosmos_sdk_version: v0.50.11-neutron
    go: go version go1.22.9 linux/amd64
    name: neutron
@@ -52,7 +52,7 @@ _Note: Prior to the upgrade, validators are encouraged to take a full data snaps
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-1e2aa2ab56e60bc3bdda7bdd0b505c02e8a304c5874ce2d907d01d26ee825b9bTODO  neutrond-linux-amd64
+d2d0795a4c3fb45dd17baf8d4f3a3878faa87c360e1f15e6bba7c83a7db6f03f  neutrond-linux-amd64
 ```
 
 
