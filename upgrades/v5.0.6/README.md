@@ -16,7 +16,7 @@ order: 2
 _Note: Prior to the upgrade, validators are encouraged to take a full data snapshot. Snapshotting depends heavily on infrastructure, but generally this can be done by backing up the `.neutrond` directory._
 
 1. Stop the node if you didn't stop it yet, and back-up the `.neutrond/data/priv_validator_state.json` file just in case.
-2. Roll the node back 1 block: `neutrond rollback --home <YOUR_NEUTRON_HOME_FOLDER_PATH>`.
+2. Roll the node back 1 block: `neutrond rollback --home <YOUR_NEUTRON_HOME_FOLDER_PATH>`. **This can take up some time, depending on the configuration of your node (how aggressively you prune).**
 3. Run the node with the new binary (see the instructions below on how to obtain the binary).
 
 ## Building Neutron v5.0.6
