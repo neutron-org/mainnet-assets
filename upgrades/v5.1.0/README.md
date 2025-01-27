@@ -45,7 +45,7 @@ It is critically important for validator operators to back-up the `.neutrond/dat
 
 ### Current runtime
 
-The Neutron mainnet network, `neutron-1`, is currently running [Neutron v5.0.6](https://github.com/neutron-org/neutron/releases/tag/v5.0.6). We anticipate that operators who are running on v5.0.6, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.22`.
+The Neutron mainnet network, `neutron-1`, is currently running [Neutron v5.0.6](https://github.com/neutron-org/neutron/releases/tag/v5.0.6). We anticipate that operators who are running on v5.0.6, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.23`.
 
 _Note: the v5.0.6 release that can be found in the Neutron repo was created only for RPC nodes, and we do no expect validators to be running it._
 
@@ -136,7 +136,7 @@ $ neutrond q wasm libwasmvm-version
 
 ### Method I: Manual Upgrade
 
-Make sure Neutron v5.1.0 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v5.1.0), or building from source. Building from source requires **Golang 1.22.x**.
+Make sure Neutron v5.1.0 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v5.1.0), or building from source. Building from source requires **Golang 1.23.x**.
 
 Run Neutron v5.0.6 till upgrade height, the node will panic:
 
