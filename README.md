@@ -29,6 +29,7 @@ The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub netwo
 | **v5.0.4** | Upgrade ([more info][18])         | Coordinated **consensus breaking** security upgrade on height 18015000 approximately on Friday Dec 20th 2024                                                                        |                                        |
 | **v5.0.5** | Upgrade ([more info][19])         | Coordinated **consensus breaking** security upgrade on height 18125000 approximately at 17:00 UTC on 23d of December 2024                                                           |                                        |
 | **v5.0.6** | Upgrade ([more info][20])         | Coordinated **consensus breaking** security upgrade on height 18906877 approximately 13th of January 2025                                                                           |                                        |
+| **v5.0.7** | Upgrade ([more info][21])         | Coordinated **consensus breaking** security upgrade on 4th of February 2025 approximately at 14:30 UTC.                                                                             |                                        |
 
 
 ## Parameters
@@ -70,7 +71,7 @@ You can check the difference [here](https://github.com/neutron-org/neutron/compa
 The final `genesis.json` information is provided below:
 
 | Item                  | Description                                                                                              |
-| --------------------- | -------------------------------------------------------------------------------------------------------- |
+|-----------------------|----------------------------------------------------------------------------------------------------------|
 | **Genesis**           | [genesis.json](https://raw.githubusercontent.com/neutron-org/mainnet-assets/main/neutron-1-genesis.json) |
 | **Checksum (sha256)** | 9496492c81b31befb59a4336d5ae4444c24b863721d21be143d7d4fdf8072c84                                         |
 
@@ -205,3 +206,4 @@ You can also download binary directly from our [official release](https://github
 [18]: ./upgrades/v5.0.4/README.md
 [19]: ./upgrades/v5.0.5/README.md
 [20]: ./upgrades/v5.0.6/README.md
+[21]: ./upgrades/v5.0.7/README.md
