@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v5.0.7 Upgrade, Instructions
 
-- This is an **emergency upgrade** necessary to **un-halt the chain** on January 14, 2025.
+- This is an **emergency upgrade** necessary to **un-halt the chain** on February 4, 2025 approximately at 17:00 UTC.
 - Go version: `v1.22`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v5.0.7
 
