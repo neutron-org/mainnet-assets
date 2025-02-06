@@ -10,6 +10,7 @@ order: 2
 ### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE V5.1.1 BINARY FOR THIS UPGRADE
 
 - Chain upgrade point: at height `19947000`, `February 12th 2025, 14:00 UTC` (approximately);
+- **Slinky SideCar:** [v1.2.0](https://github.com/skip-mev/connect/releases/tag/v1.2.0);
 - Go version: `v1.23`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v5.1.1
 
@@ -59,6 +60,7 @@ The Neutron mainnet network, `neutron-1`, will run [Neutron v5.1.1](https://gith
 
 There are 2 major ways to upgrade a node:
 
+- **Upgrade your Slinky SideCar to** [v1.2.0](https://github.com/skip-mev/connect/releases/tag/v1.2.0);
 - Manual upgrade
 - Upgrade using [Cosmovisor](https://pkg.go.dev/cosmossdk.io/tools/cosmovisor)
     - Either by manually preparing the new binary
