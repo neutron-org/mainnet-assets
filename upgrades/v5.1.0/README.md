@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v5.1.1 Upgrade, Instructions
 
-### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE V5.0.1 BINARY FOR THIS UPGRADE
+### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE V5.1.1 BINARY FOR THIS UPGRADE
 
 - Chain upgrade point: at height `19947000`, `February 12th 2025, 14:00 UTC` (approximately);
 - Go version: `v1.23`
