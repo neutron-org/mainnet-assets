@@ -144,7 +144,7 @@ Make sure Neutron v5.1.1 is installed by either downloading a [compatible binary
 Run Neutron v5.0.7 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v5.1.1" NEEDED at height: 19947000: upgrade to v5.1.1 and applying upgrade "v5.1.1" at height: 19947000
+ERR UPGRADE "v5.1.0" NEEDED at height: 19947000: upgrade to v5.1.0 and applying upgrade "v5.1.0" at height: 19947000
 ```
 
 Stop the node, and switch the binary to **Neutron v5.1.1** and re-start by `neutrond start`.
@@ -179,11 +179,11 @@ mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
 cp $(which neutrond) $NEUTRON_HOME/cosmovisor/genesis/bin
 ```
 
-build **Neutron v5.1.1**, and move neutrond v5.1.1 to `$NEUTRON_HOME/cosmovisor/upgrades/v5.1.1/bin`
+build **Neutron v5.1.1**, and move neutrond v5.1.1 to `$NEUTRON_HOME/cosmovisor/upgrades/v5.1.0/bin`
 
 ```shell
-mkdir -p  $NEUTRON_HOME/cosmovisor/upgrades/v5.1.1/bin
-cp $(which neutrond) $NEUTRON_HOME/cosmovisor/upgrades/v5.1.1/bin
+mkdir -p  $NEUTRON_HOME/cosmovisor/upgrades/v5.1.0/bin
+cp $(which neutrond) $NEUTRON_HOME/cosmovisor/upgrades/v5.1.0/bin
 ```
 
 Then you should get the following structure:
@@ -195,7 +195,7 @@ Then you should get the following structure:
 │   └── bin
 │       └── neutrond  #v5.0.7
 └── upgrades
-    └── v5.1.1
+    └── v5.1.0
         └── bin
             └── neutrond  #v5.1.1
 ```
