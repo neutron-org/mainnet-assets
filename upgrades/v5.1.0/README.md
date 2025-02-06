@@ -1,17 +1,19 @@
 ---
-title: Neutron v5.1.0 Upgrade
+title: Neutron v5.1.1 Upgrade
 order: 2
 ---
 
 <!-- markdown-link-check-disable -->
 
-# Neutron v5.1.0 Upgrade, Instructions
+# Neutron v5.1.1 Upgrade, Instructions
+
+### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE V5.0.1 BINARY FOR THIS UPGRADE
 
 - Chain upgrade point: at height `19947000`, `February 12th 2025, 14:00 UTC` (approximately);
 - Go version: `v1.23`
-- Release: https://github.com/neutron-org/neutron/releases/tag/v5.1.0
+- Release: https://github.com/neutron-org/neutron/releases/tag/v5.1.1
 
-This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.1.0 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.1.0).
+This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.1.1 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.1.1).
 
 ## Upgrade date
 
@@ -45,13 +47,13 @@ It is critically important for validator operators to back-up the `.neutrond/dat
 
 ### Current runtime
 
-The Neutron mainnet network, `neutron-1`, is currently running [Neutron v5.0.6](https://github.com/neutron-org/neutron/releases/tag/v5.0.6). We anticipate that operators who are running on v5.0.6, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.23`.
+The Neutron mainnet network, `neutron-1`, is currently running [Neutron v5.0.7](https://github.com/neutron-org/neutron/releases/tag/v5.0.7). We anticipate that operators who are running on v5.0.7, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.23`.
 
-_Note: the v5.0.6 release that can be found in the Neutron repo was created only for RPC nodes, and we do no expect validators to be running it._
+_Note: the v5.0.7 release that can be found in the Neutron repo was created only for RPC nodes, and we do no expect validators to be running it._
 
 ### Target runtime
 
-The Neutron mainnet network, `neutron-1`, will run [Neutron v5.1.0](https://github.com/neutron-org/neutron/releases/tag/v5.1.0). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
+The Neutron mainnet network, `neutron-1`, will run [Neutron v5.1.1](https://github.com/neutron-org/neutron/releases/tag/v5.1.1). Operators _**MUST**_ use this version post-upgrade to remain connected to the network.
 
 ## Upgrade steps
 
@@ -64,7 +66,7 @@ There are 2 major ways to upgrade a node:
 
 If you prefer to use Cosmovisor to upgrade, some preparation work is needed before upgrade.
 
-## Create the updated Neutron binary of v5.1.0
+## Create the updated Neutron binary of v5.1.1
 
 ### Go to neutron directory if present else clone the repository
 
@@ -78,7 +80,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
    cd $HOME/neutron
    git pull
    git fetch --tags
-   git checkout v5.1.0
+   git checkout v5.1.1
    make install
 ```
 
@@ -90,11 +92,11 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
     go: go version go1.23.4 darwin/arm64
     name: neutron
     server_name: neutrond
-    version: 5.1.0
+    version: 5.1.1
    ...
 ```
 
-### Or check checksum of the binary if you decided to [download it](https://github.com/neutron-org/neutron/releases/tag/v5.1.0)
+### Or check checksum of the binary if you decided to [download it](https://github.com/neutron-org/neutron/releases/tag/v5.1.1)
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
@@ -108,20 +110,20 @@ You can check the version you are currently using by running the following comma
 ```
 $ neutrond q wasm libwasmvm-version
 
-2.1.4
+2.1.5
 ```
-The proper version is `2.1.4`.
+The proper version is `2.1.5`.
 
 **If the version on your machine is different you MUST change it immediately!**
 
 #### Ways to change libwasmvm
 
-- Use a statically built Neutrond binary from an official Neutron release: [https://github.com/neutron-org/neutron/releases/tag/v5.1.0](https://github.com/neutron-org/neutron/releases/tag/v5.1.0)
+- Use a statically built Neutrond binary from an official Neutron release: [https://github.com/neutron-org/neutron/releases/tag/v5.1.1](https://github.com/neutron-org/neutron/releases/tag/v5.1.1)
 - If you built Neutron binary by yourself, `libwasmvm` should be loaded dynamically in your binary and somehow, the wrong `libwasmvm` library was present on your machine. You can change it by downloading the proper one and linking it to the Neutron binary manually:
 1. download a proper version of `libwasmvm`:
 
 ```
-$ wget https://github.com/CosmWasm/wasmvm/releases/download/v2.1.4/libwasmvm.x86_64.so
+$ wget https://github.com/CosmWasm/wasmvm/releases/download/v2.1.5/libwasmvm.x86_64.so
 ```
 
 2. tell the linker where to find it:
@@ -132,20 +134,20 @@ $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/
 3. check that libwasmvm version is correct:
 ```
 $ neutrond q wasm libwasmvm-version
-2.1.4
+2.1.5
 ```
 
 ### Method I: Manual Upgrade
 
-Make sure Neutron v5.1.0 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v5.1.0), or building from source. Building from source requires **Golang 1.23.x**.
+Make sure Neutron v5.1.1 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v5.1.1), or building from source. Building from source requires **Golang 1.23.x**.
 
-Run Neutron v5.0.6 till upgrade height, the node will panic:
+Run Neutron v5.0.7 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v5.1.0" NEEDED at height: 19947000: upgrade to v5.1.0 and applying upgrade "v5.1.0" at height: 19947000
+ERR UPGRADE "v5.1.1" NEEDED at height: 19947000: upgrade to v5.1.1 and applying upgrade "v5.1.1" at height: 19947000
 ```
 
-Stop the node, and switch the binary to **Neutron v5.1.0** and re-start by `neutrond start`.
+Stop the node, and switch the binary to **Neutron v5.1.1** and re-start by `neutrond start`.
 
 It may take several minutes to a few hours until validators with a total sum voting power > 2/3 to complete their node upgrades. After that, the chain can continue to produce blocks.
 
@@ -170,18 +172,18 @@ cosmovisor version: v1.5.0
 
 Create a cosmovisor folder:
 
-create a Cosmovisor folder inside `$NEUTRON_HOME` and move Neutron v5.0.6 into `$NEUTRON_HOME/cosmovisor/genesis/bin`
+create a Cosmovisor folder inside `$NEUTRON_HOME` and move Neutron v5.0.7 into `$NEUTRON_HOME/cosmovisor/genesis/bin`
 
 ```shell
 mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
 cp $(which neutrond) $NEUTRON_HOME/cosmovisor/genesis/bin
 ```
 
-build **Neutron v5.1.0**, and move neutrond v5.1.0 to `$NEUTRON_HOME/cosmovisor/upgrades/v5.1.0/bin`
+build **Neutron v5.1.1**, and move neutrond v5.1.1 to `$NEUTRON_HOME/cosmovisor/upgrades/v5.1.1/bin`
 
 ```shell
-mkdir -p  $NEUTRON_HOME/cosmovisor/upgrades/v5.1.0/bin
-cp $(which neutrond) $NEUTRON_HOME/cosmovisor/upgrades/v5.1.0/bin
+mkdir -p  $NEUTRON_HOME/cosmovisor/upgrades/v5.1.1/bin
+cp $(which neutrond) $NEUTRON_HOME/cosmovisor/upgrades/v5.1.1/bin
 ```
 
 Then you should get the following structure:
@@ -191,11 +193,11 @@ Then you should get the following structure:
 ├── current -> genesis or upgrades/<name>
 ├── genesis
 │   └── bin
-│       └── neutrond  #v5.0.6
+│       └── neutrond  #v5.0.7
 └── upgrades
-    └── v5.1.0
+    └── v5.1.1
         └── bin
-            └── neutrond  #v5.1.0
+            └── neutrond  #v5.1.1
 ```
 
 Export the environmental variables:
@@ -230,7 +232,7 @@ Most likely it takes around 20 minutes, given that all nodes will stop at halt t
 
 During the network upgrade, core Neutron team will be keeping an ever vigilant eye and communicating with operators on the status of their upgrades. During this time, the core team will listen to operator needs to determine if the upgrade is experiencing unintended challenges. In the event of unexpected challenges, the core team, after conferring with operators and attaining social consensus, may choose to declare that the upgrade will be skipped.
 
-Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v5.0.6 binary using the following command:
+Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v5.0.7 binary using the following command:
 
 > neutrond start --unsafe-skip-upgrade 19947000
 
