@@ -5,7 +5,7 @@ order: 2
 
 <!-- markdown-link-check-disable -->
 
-# Neutron v5.1.1 Upgrade, Instructions
+# Neutron v5.1.0 Upgrade, Instructions
 
 ### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE V5.1.1 BINARY FOR THIS UPGRADE
 
