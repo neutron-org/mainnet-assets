@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v5.1.0 Upgrade, Instructions
 
-### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE V5.1.2 BINARY FOR THIS UPGRADE
+## BECAUSE OF A SECURITY UPGRADE THAT WAS PERFORMED AFTER THE v5.1.0 PROPOSAL WAS POSTED, YOU MUST USE THE V5.1.2 BINARY FOR THIS UPGRADE, WHICH INCLUDES THE FIX FROM THE SECURITY UPGRADE.
 
 - Chain upgrade point: at height `19947000`, `February 12th 2025, 14:00 UTC` (approximately);
 - **Slinky SideCar:** [v1.2.0](https://github.com/skip-mev/connect/releases/tag/v1.2.0);
