@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v5.1.0 Upgrade, Instructions
 
-## BECAUSE OF A SECURITY UPGRADE THAT WAS PERFORMED AFTER THE v5.1.0 PROPOSAL WAS POSTED, YOU MUST USE THE V5.1.2 BINARY FOR THIS UPGRADE, WHICH INCLUDES THE FIX FROM THE SECURITY UPGRADE.
+## BECAUSE OF A SECURITY UPGRADE THAT WAS PERFORMED AFTER THE v5.1.0 PROPOSAL WAS POSTED, YOU MUST USE THE v5.1.2 BINARY FOR THIS UPGRADE, WHICH INCLUDES THE FIX FROM THE SECURITY UPGRADE.
 
 - Chain upgrade point: at height `19947000`, `February 12th 2025, 14:00 UTC` (approximately);
 - **Slinky SideCar:** [v1.2.0](https://github.com/skip-mev/connect/releases/tag/v1.2.0);
@@ -15,6 +15,10 @@ order: 2
 - Release: https://github.com/neutron-org/neutron/releases/tag/v5.1.2
 
 This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v5.1.2 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v5.1.2).
+
+**NOTE: As part of their acquisition by Interchain, Skip is shifting focus away from Slinky maintenance and deprecating active market management. 
+
+In order to continue effectively operating the oracle, v5.1.2 adds an operational multisig that will allow the Hadron Labs team to add new markets, and removes the old operational multisig owned by Skip.**
 
 ## Upgrade date
 
