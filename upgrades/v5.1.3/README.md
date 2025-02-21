@@ -83,11 +83,12 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 ### Check the new neutron version, verify the latest commit hash
 ```shell
    $ neutrond version --long
-   commit: cdd4fd6fcee5baf2d6ae79dac0e6b12aa847aff2
-   cosmos_sdk_version: v0.50.12-neutron
-   go: go version go1.23.9 linux/amd64
-   name: neutron
-   version: 5.1.3
+    commit: 41f3b7c049296c00b2e8613e8ccf5d9ebcfd8cb5
+    cosmos_sdk_version: v0.50.12-neutron
+    go: go version go1.23.4 darwin/arm64
+    name: neutron
+    server_name: neutrond
+    version: 5.1.3
    ...
 ```
 
@@ -95,7 +96,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-1e2aa2ab56e60bc3bdda7bdd0b505c02e8a304c5874ce2d907d01d26ee825b9b  neutrond-linux-amd64
+5ed88e24d8c66c2faf87743e04a000fdfd15be17fc9498f27f9ea20d00f25e78  neutrond-linux-amd64
 ```
 
 
