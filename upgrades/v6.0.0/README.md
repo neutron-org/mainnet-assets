@@ -9,7 +9,7 @@ order: 2
 
 ### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE v6.0.0 BINARY FOR THIS UPGRADE
 
-- Chain upgrade point: `April 9th 2025, 17:30 UTC` approximately at height `22044500`;
+- Chain upgrade point: `April 9th 2025, 17:30 UTC` approximately at height `22041500`;
 - Go version: `v1.23`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v6.0.0
 
@@ -17,7 +17,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately on April 9th at `17:30 UTC` approximately at height `22044500`;
+The upgrade will take place approximately on April 9th at `17:30 UTC` approximately at height `22041500`;
 
 ## Chain-id will remain the same
 
@@ -140,7 +140,7 @@ Make sure Neutron v6.0.0 is installed by either downloading a [compatible binary
 Run Neutron v5.1.4 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v6.0.0" NEEDED at height: 22044500: upgrade to v6.0.0 and applying upgrade "v6.0.0" at height: 16705000
+ERR UPGRADE "v6.0.0" NEEDED at height: 22041500: upgrade to v6.0.0 and applying upgrade "v6.0.0" at height: 16705000
 ```
 
 Stop the node, and switch the binary to **Neutron v6.0.0** and re-start by `neutrond start`.
@@ -230,7 +230,7 @@ During the network upgrade, core Neutron team will be keeping an ever vigilant e
 
 Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v5.1.4 binary using the following command:
 
-> neutrond start --unsafe-skip-upgrade 22044500
+> neutrond start --unsafe-skip-upgrade 22041500
 
 Note: There is no particular need to restore a state snapshot prior to the upgrade height, unless specifically directed by core Neutron team.
 
