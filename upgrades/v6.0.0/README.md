@@ -9,7 +9,7 @@ order: 2
 
 ### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE v6.0.0 BINARY FOR THIS UPGRADE
 
-- Chain upgrade point: `April 9th 2025, 17:30 UTC` approximately at height `22041500`;
+- Chain upgrade point: `April 10th 2025, 15:00 UTC` approximately at height `22041500`;
 - Go version: `v1.23`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v6.0.0
 
@@ -17,7 +17,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately on April 9th at `17:30 UTC` approximately at height `22041500`;
+The upgrade will take place approximately on April 10th at `15:00 UTC` approximately at height `22041500`;
 
 ## Chain-id will remain the same
 
@@ -87,8 +87,8 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
    $ neutrond version --long
    name: neutron
    server_name: neutrond
-   version: 5.0.1
-   commit: 954660e40667a67dba1fb68dc347ba1ec90f9c1f
+   version: 6.0.0
+   commit: e3bcb32d8ea469cb39ce6eee30f48fce112d4c66
    ...
 ```
 
@@ -96,7 +96,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-4cb48cf146be021f9e4a2a748eaa4fc2bf0979704a7ee5b25c761b9431060570  neutrond-linux-amd64
+c1edb1bdcbf2e8ebab8cefa4a6008a6b8240b5ec5ebd8177a4328b02806bafe3  neutrond-linux-amd64
 ```
 
 
@@ -140,7 +140,7 @@ Make sure Neutron v6.0.0 is installed by either downloading a [compatible binary
 Run Neutron v5.1.4 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v6.0.0" NEEDED at height: 22041500: upgrade to v6.0.0 and applying upgrade "v6.0.0" at height: 16705000
+ERR UPGRADE "v6.0.0" NEEDED at height: 22041500: upgrade to v6.0.0 and applying upgrade "v6.0.0" at height: 22041500
 ```
 
 Stop the node, and switch the binary to **Neutron v6.0.0** and re-start by `neutrond start`.
@@ -168,7 +168,7 @@ cosmovisor version: v1.5.0
 
 Create a cosmovisor folder:
 
-create a Cosmovisor folder inside `$NEUTRON_HOME` and move Neutron v3.0.2 into `$NEUTRON_HOME/cosmovisor/genesis/bin`
+create a Cosmovisor folder inside `$NEUTRON_HOME` and move Neutron v5.1.4 into `$NEUTRON_HOME/cosmovisor/genesis/bin`
 
 ```shell
 mkdir -p $NEUTRON_HOME/cosmovisor/genesis/bin
