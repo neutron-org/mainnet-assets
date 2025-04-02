@@ -7,7 +7,14 @@ order: 2
 
 # Neutron v6.0.0 Upgrade, Instructions
 
-### DUE TO A SECURITY ISSUE IN COMETBFT, PLEASE USE v6.0.0 BINARY FOR THIS UPGRADE
+> **If you were running an ICS validator for Neutron, do not turn off your ICS node until height 22041600 (upgrade height+100)!**
+>
+> There is no double signing risk:
+>
+> 1. Blocks 22041500 and 22041500+1 will be signed by the old (ICS) validator set
+> 2. By block 22041500+2, all ICS nodes will switch to RPC mode and will stop voting for blocks
+>
+> **As a safety measure, do not turn off your ICS node until block 22041600 (upgrade height+100)!**
 
 - Chain upgrade point: `April 10th 2025, 15:00 UTC` approximately at height `22041500`;
 - Go version: `v1.23`
