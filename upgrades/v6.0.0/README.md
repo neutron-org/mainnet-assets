@@ -16,7 +16,7 @@ order: 2
 >
 > **As a safety measure, do not turn off your ICS node until block 22041600 (upgrade height+100)!**
 
-- Chain upgrade point: `April 10th 2025, 15:00 UTC` approximately at height `22041500`;
+- Chain upgrade point: `April 10th 2025, 15:00 UTC (approximately)`, at height `22041500`;
 - Go version: `v1.23`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v6.0.0
 
