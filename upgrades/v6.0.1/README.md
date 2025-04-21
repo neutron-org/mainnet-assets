@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v6.0.1 Upgrade, Instructions
 
-- Chain upgrade point: `April 23rd 2025, 15:00 UTC (approximately)`, at height `<HEIGHT>`;
+- Chain upgrade point: `April 23rd 2025, 15:00 UTC (approximately)`, at height `22996000`;
 - Go version: `v1.23`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v6.0.1
 
@@ -15,7 +15,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately on April 10th at `15:00 UTC` approximately at height `<HEIGHT>`;
+The upgrade will take place approximately on April 10th at `15:00 UTC` approximately at height `22996000`;
 
 ## Chain-id will remain the same
 
@@ -138,7 +138,7 @@ Make sure Neutron v6.0.1 is installed by either downloading a [compatible binary
 Run Neutron v6.0.0 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v6.0.1" NEEDED at height: <HEIGHT>: upgrade to v6.0.1 and applying upgrade "v6.0.1" at height: <HEIGHT>
+ERR UPGRADE "v6.0.1" NEEDED at height: 22996000: upgrade to v6.0.1 and applying upgrade "v6.0.1" at height: 22996000
 ```
 
 Stop the node, and switch the binary to **Neutron v6.0.1** and re-start by `neutrond start`.
@@ -228,7 +228,7 @@ During the network upgrade, core Neutron team will be keeping an ever vigilant e
 
 Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v6.0.0 binary using the following command:
 
-> neutrond start --unsafe-skip-upgrade <HEIGHT>
+> neutrond start --unsafe-skip-upgrade 22996000
 
 Note: There is no particular need to restore a state snapshot prior to the upgrade height, unless specifically directed by core Neutron team.
 
