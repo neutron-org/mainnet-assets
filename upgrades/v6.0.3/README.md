@@ -8,7 +8,7 @@ order: 2
 # Neutron v6.0.3 Upgrade, Instructions
 
 - Chain upgrade point: `July 2nd 2025, 15:00 UTC (approximately)`, at height `28886600`;
-- Go version: `v1.23`
+- Go version: `v1.23.4`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v6.0.3
 
 This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v6.0.3 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v6.0.3).
