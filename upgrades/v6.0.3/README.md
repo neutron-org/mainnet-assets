@@ -86,7 +86,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
     build_tags: netgo,ledger
     commit: 0625c4069419e310e6295d102fb1552c89a357c5
     cosmos_sdk_version: v0.50.13-neutron-rpc
-    go: go version go1.23.7 darwin/arm64
+    go: go version go1.23.4 darwin/arm64
     name: neutron
     server_name: neutrond
     version: 6.0.3
