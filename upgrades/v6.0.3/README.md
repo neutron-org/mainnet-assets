@@ -15,7 +15,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately on June 10th at `15:00 UTC` approximately at height `28886600`;
+The upgrade will take place approximately on July 2nd at `15:00 UTC` approximately at height `28886600`;
 
 ## Chain-id will remain the same
 
