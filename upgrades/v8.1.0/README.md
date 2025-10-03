@@ -107,9 +107,9 @@ You can check the version you are currently using by running the following comma
 ```
 $ neutrond q wasm libwasmvm-version
 
-2.1.5
+2.2.4
 ```
-The proper version is `2.1.5`.
+The proper version is `2.2.4`.
 
 **If the version on your machine is different you MUST change it immediately!**
 
