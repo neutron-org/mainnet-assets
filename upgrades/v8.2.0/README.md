@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v8.2.0 Upgrade, Instructions
 
-- Chain upgrade point: `Nov 5th 2025, 15:30 UTC (approximately)`, at height `39416000`;
+- Chain upgrade point: `Nov 5th 2025, 16:00 UTC (approximately)`, at height `39417500`;
 - Go version: `v1.23.4`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v8.2.0
 
@@ -15,7 +15,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately on Nov 5th at approximately `15:30 UTC` at height `39416000`;
+The upgrade will take place approximately on Nov 5th at approximately `16:00 UTC` at height `39417500`;
 
 ## Chain-id will remain the same
 
@@ -83,14 +83,13 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 ### Check the new neutron version, verify the latest commit hash
 ```shell
    $ neutrond version --long
-    build_tags: netgo,ledger
-    commit: dd3b27211b32ef085056f5e9e3211e124f15674b
+    build_tags: '''netgo,ledger,muslc'''
+    commit: 47b6f47e9ed7a6c5487b84d44fb64665a8cb4fc2
     cosmos_sdk_version: v0.50.13-neutron.0.20250512094026-b5afd837c4de
-    go: go version go1.23.10 darwin/arm64
+    go: go version go1.23.4 linux/amd64
     name: neutron
     server_name: neutrond
     version: 8.2.0
-    <TODO:FIX_OUTPUT>
    ...
 ```
 
@@ -98,7 +97,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-<TODO:SHA256>  neutrond-linux-amd64
+a05c559281002db269780459a492af74bb8e7faeb2c59e6fa24ca7ff8f55c157  neutrond-linux-amd64
 ```
 
 
@@ -142,7 +141,7 @@ Make sure Neutron v8.2.0 is installed by either downloading a [compatible binary
 Run Neutron v8.1.1 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v8.2.0" NEEDED at height: 39416000: upgrade to v8.2.0 and applying upgrade "v8.2.0" at height: 39416000
+ERR UPGRADE "v8.2.0" NEEDED at height: 39417500: upgrade to v8.2.0 and applying upgrade "v8.2.0" at height: 39417500
 ```
 
 Stop the node, and switch the binary to **Neutron v8.2.0** and re-start by `neutrond start`.
@@ -232,7 +231,7 @@ During the network upgrade, core Neutron team will be keeping an ever vigilant e
 
 Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v8.1.1 binary using the following command:
 
-> neutrond start --unsafe-skip-upgrade 39416000
+> neutrond start --unsafe-skip-upgrade 39417500
 
 Note: There is no particular need to restore a state snapshot prior to the upgrade height, unless specifically directed by core Neutron team.
 
