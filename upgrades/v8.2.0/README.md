@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v8.2.0 Upgrade, Instructions
 
-- Chain upgrade point: `Nov 5th 2025, 15:00 UTC (approximately)`, at height `39414000`;
+- Chain upgrade point: `Nov 5th 2025, 15:30 UTC (approximately)`, at height `39416000`;
 - Go version: `v1.23.4`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v8.2.0
 
@@ -15,7 +15,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately on Nov 5th at approximately `15:00 UTC` at height `39414000`;
+The upgrade will take place approximately on Nov 5th at approximately `15:30 UTC` at height `39416000`;
 
 ## Chain-id will remain the same
 
@@ -142,7 +142,7 @@ Make sure Neutron v8.2.0 is installed by either downloading a [compatible binary
 Run Neutron v8.1.1 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v8.2.0" NEEDED at height: 39414000: upgrade to v8.2.0 and applying upgrade "v8.2.0" at height: 39414000
+ERR UPGRADE "v8.2.0" NEEDED at height: 39416000: upgrade to v8.2.0 and applying upgrade "v8.2.0" at height: 39416000
 ```
 
 Stop the node, and switch the binary to **Neutron v8.2.0** and re-start by `neutrond start`.
@@ -232,7 +232,7 @@ During the network upgrade, core Neutron team will be keeping an ever vigilant e
 
 Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v8.1.1 binary using the following command:
 
-> neutrond start --unsafe-skip-upgrade 39414000
+> neutrond start --unsafe-skip-upgrade 39416000
 
 Note: There is no particular need to restore a state snapshot prior to the upgrade height, unless specifically directed by core Neutron team.
 
