@@ -97,7 +97,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-a05c559281002db269780459a492af74bb8e7faeb2c59e6fa24ca7ff8f55c157  neutrond-linux-amd64
+c857360077b71782642d755c35da210b6bfc43a48580121cda0376d3e2fe7819  neutrond-linux-amd64
 ```
 
 
