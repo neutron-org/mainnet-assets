@@ -120,7 +120,7 @@ The proper version is `2.2.4`.
 1. download a proper version of `libwasmvm`:
 
 ```
-$ wget https://github.com/CosmWasm/wasmvm/releases/download/v2.1.5/libwasmvm.x86_64.so
+$ wget https://github.com/CosmWasm/wasmvm/releases/download/v2.2.4/libwasmvm.x86_64.so
 ```
 
 2. tell the linker where to find it:
