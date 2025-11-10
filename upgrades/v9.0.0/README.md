@@ -83,13 +83,13 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 ### Check the new neutron version, verify the latest commit hash
 ```shell
    $ neutrond version --long
-    build_tags: '''netgo,ledger,muslc'''
-    commit: 47b6f47e9ed7a6c5487b84d44fb64665a8cb4fc2
+    build_tags: netgo,ledger
+    commit: acaebf89c9be287a69471215c2f20863a9dcb5cd
     cosmos_sdk_version: v0.50.13-neutron.0.20250512094026-b5afd837c4de
-    go: go version go1.23.4 linux/amd64
+    go: go version go1.23.10 darwin/arm64
     name: neutron
     server_name: neutrond
-    version: 8.2.0
+    version: 9.0.0
    ...
 ```
 
