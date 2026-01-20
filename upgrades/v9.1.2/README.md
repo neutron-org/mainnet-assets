@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v9.1.2 Upgrade, Instructions
 
-- Chain upgrade point: `Jan 19th 2025, 15:00 UTC (approximately)`, at height `46170000`;
+- Chain upgrade point: `Jan 20th 2025, 15:00 UTC (approximately)`, at height `46170000`;
 - Go version: `v1.23.4`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v9.1.2
 
@@ -15,7 +15,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately on Jan 19th at approximately `15:00 UTC` at height `46170000`;
+The upgrade will take place approximately on Jan 20th at approximately `15:00 UTC` at height `46170000`;
 
 ## Chain-id will remain the same
 
@@ -45,7 +45,7 @@ It is critically important for validator operators to back-up the `.neutrond/dat
 
 ### Current runtime
 
-The Neutron mainnet network, `neutron-1`, is currently running [Neutron v9.1.1](https://github.com/neutron-org/neutron/releases/tag/v9.1.1). We anticipate that operators who are running on v9.1.1, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.23`.
+The Neutron mainnet network, `neutron-1`, is currently running [Neutron v9.1.1](https://github.com/neutron-org/neutron/releases/tag/v9.1.1). We anticipate that operators who are running on v9.1.1, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary.
 
 ### Target runtime
 
@@ -122,7 +122,7 @@ $ neutrond q wasm libwasmvm-version
 
 ### Method I: Manual Upgrade
 
-Make sure Neutron v9.1.2 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v9.1.2), or building from source. Building from source requires **Golang 1.23.x**.
+Make sure Neutron v9.1.2 is installed by downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v9.1.2).
 
 Run Neutron v9.1.1 till upgrade height, the node will panic:
 
