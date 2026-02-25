@@ -8,7 +8,7 @@ order: 2
 # Neutron v10.0.0 Upgrade, Instructions
 
 - Chain upgrade point: `March 5th 2026, 15:00 UTC (approximately)`, at height `50040000`;
-- Go version: `v1.23.4`
+- Go version: `v1.24.10`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v10.0.0
 
 This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v10.0.0 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v10.0.0).
