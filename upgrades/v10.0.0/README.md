@@ -131,7 +131,7 @@ $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/
 3. check that libwasmvm version is correct:
 ```
 $ neutrond q wasm libwasmvm-version
-2.2.4
+3.0.3
 ```
 
 ### Method I: Manual Upgrade
