@@ -84,12 +84,12 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 ```shell
    $ neutrond version --long
     build_tags: netgo,ledger
-    commit: acaebf89c9be287a69471215c2f20863a9dcb5cd
-    cosmos_sdk_version: v0.50.13-neutron.0.20250512094026-b5afd837c4de
-    go: go version go1.23.10 darwin/arm64
+    commit: 3347e5652d1be355ead69aa82d70e35b8856a81e
+    cosmos_sdk_version: v0.53.4-neutron
+    go: go version go1.24.10 linux/amd64
     name: neutron
     server_name: neutrond
-    version: 9.0.0
+    version: 10.0.0
    ...
 ```
 
@@ -97,7 +97,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-c857360077b71782642d755c35da210b6bfc43a48580121cda0376d3e2fe7819  neutrond-linux-amd64
+29f479452710432cddcea519dd1f398390955097f6ca9c3e3ac6c81ef708416f  neutrond-linux-amd64
 ```
 
 
@@ -107,9 +107,9 @@ You can check the version you are currently using by running the following comma
 ```
 $ neutrond q wasm libwasmvm-version
 
-2.2.4
+3.0.3
 ```
-The proper version is `2.2.4`.
+The proper version is `3.0.3`.
 
 **If the version on your machine is different you MUST change it immediately!**
 
@@ -120,7 +120,7 @@ The proper version is `2.2.4`.
 1. download a proper version of `libwasmvm`:
 
 ```
-$ wget https://github.com/CosmWasm/wasmvm/releases/download/v2.2.4/libwasmvm.x86_64.so
+$ wget https://github.com/CosmWasm/wasmvm/releases/download/v3.0.3/libwasmvm.x86_64.so
 ```
 
 2. tell the linker where to find it:
