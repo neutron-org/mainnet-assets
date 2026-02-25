@@ -45,7 +45,7 @@ It is critically important for validator operators to back-up the `.neutrond/dat
 
 ### Current runtime
 
-The Neutron mainnet network, `neutron-1`, is currently running [Neutron v9.1.3](https://github.com/neutron-org/neutron/releases/tag/v9.1.3). We anticipate that operators who are running on v9.1.3, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.23`.
+The Neutron mainnet network, `neutron-1`, is currently running [Neutron v9.1.3](https://github.com/neutron-org/neutron/releases/tag/v9.1.3). We anticipate that operators who are running on v9.1.3, will be able to upgrade successfully. Validators are expected to ensure that their systems are up-to-date and capable of performing the upgrade. This includes running the correct binary, or if building from source, building with go `1.24`.
 
 ### Target runtime
 
