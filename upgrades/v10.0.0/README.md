@@ -136,7 +136,7 @@ $ neutrond q wasm libwasmvm-version
 
 ### Method I: Manual Upgrade
 
-Make sure Neutron v10.0.0 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v10.0.0), or building from source. Building from source requires **Golang 1.23.x**.
+Make sure Neutron v10.0.0 is installed by either downloading a [compatible binary](https://github.com/neutron-org/neutron/releases/tag/v10.0.0), or building from source. Building from source requires **Golang 1.24.x**.
 
 Run Neutron v9.1.3 till upgrade height, the node will panic:
 
