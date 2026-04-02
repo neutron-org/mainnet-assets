@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v10.2.0 Upgrade, Instructions
 
-- Chain upgrade point: `April 3rd 2026, 15:00 UTC (approximately)`, at height `52666000`;
+- Chain upgrade point: `April 3rd 2026, 14:00 UTC (approximately)`, at height `52662600`;
 - Go version: `v1.24.10`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v10.2.0
 
@@ -15,7 +15,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately on April 3rd at approximately `15:00 UTC` at height `52666000`;
+The upgrade will take place approximately on April 3rd at approximately `14:00 UTC` at height `52662600`;
 
 ## Chain-id will remain the same
 
@@ -84,7 +84,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 ```shell
    $ neutrond version --long
     build_tags: netgo,ledger,pebbledb
-    commit: 8a15dd5af90f932d40a925641d062328f99e426a
+    commit: <TODO>
     cosmos_sdk_version: v0.53.4-neutron
     go: go version go1.24.10 linux/amd64
     name: neutron
@@ -97,7 +97,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-327666be4df5a4963fe346b578916eeefc3aaed09b68475d024d577b44eacf67  neutrond-linux-amd64
+<TODO>  neutrond-linux-amd64
 ```
 
 
@@ -141,7 +141,7 @@ Make sure Neutron v10.2.0 is installed by either downloading a [compatible binar
 Run Neutron v10.1.0 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v10.2.0" NEEDED at height: 52666000: upgrade to v10.2.0 and applying upgrade "v10.2.0" at height: 52666000
+ERR UPGRADE "v10.2.0" NEEDED at height: 52662600: upgrade to v10.2.0 and applying upgrade "v10.2.0" at height: 52662600
 ```
 
 Stop the node, and switch the binary to **Neutron v10.2.0** and re-start by `neutrond start`.
@@ -231,7 +231,7 @@ During the network upgrade, core Neutron team will be keeping an ever vigilant e
 
 Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v10.1.0 binary using the following command:
 
-> neutrond start --unsafe-skip-upgrade 52666000
+> neutrond start --unsafe-skip-upgrade 52662600
 
 Note: There is no particular need to restore a state snapshot prior to the upgrade height, unless specifically directed by core Neutron team.
 
