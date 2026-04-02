@@ -84,7 +84,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 ```shell
    $ neutrond version --long
     build_tags: netgo,ledger,pebbledb
-    commit: <TODO>
+    commit: cc4c1b7a23d7161ececfbabd4a655eb98a856cd6
     cosmos_sdk_version: v0.53.4-neutron
     go: go version go1.24.10 linux/amd64
     name: neutron
@@ -97,7 +97,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-<TODO>  neutrond-linux-amd64
+78ca61b89fa62052513be8e45ddd6a1fc113bb06c430eec41ac61679db8b1a18  neutrond-linux-amd64
 ```
 
 
