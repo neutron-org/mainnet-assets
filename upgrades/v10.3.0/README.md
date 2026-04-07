@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v10.3.0 Upgrade, Instructions
 
-- Chain upgrade point: `April 17th 2026, 14:00 UTC (approximately)`, at height `53740000`;
+- Chain upgrade point: `April 15th 2026, 14:00 UTC (approximately)`, at height `53740000`;
 - Go version: `v1.24.10`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v10.3.0
 
@@ -83,13 +83,13 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 ### Check the new neutron version, verify the latest commit hash
 ```shell
    $ neutrond version --long
-    build_tags: netgo,ledger,pebbledb
-    commit: cc4c1b7a23d7161ececfbabd4a655eb98a856cd6
+    build_tags: '''netgo,ledger,pebbledb,muslc'''
+    commit: bd183234ba60296f837aa9bb12adfbc3fda0862a
     cosmos_sdk_version: v0.53.4-neutron
     go: go version go1.24.10 linux/amd64
     name: neutron
     server_name: neutrond
-    version: 10.2.0
+    version: 10.3.0
    ...
 ```
 
@@ -97,7 +97,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-78ca61b89fa62052513be8e45ddd6a1fc113bb06c430eec41ac61679db8b1a18  neutrond-linux-amd64
+9bdfc3d133a6a794d0de1ddd9d77a2557657ccac1bc7bf0a3873086acf220598  neutrond-linux-amd64
 ```
 
 
