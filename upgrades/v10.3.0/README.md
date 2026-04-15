@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v10.3.0 Upgrade, Instructions
 
-- Chain upgrade point: `April 15th 2026, 14:00 UTC (approximately)`, at height `53727500`;
+- Chain upgrade point: `April 16th 2026, 14:00 UTC (approximately)`, at height `53830000`;
 - Go version: `v1.24.10`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v10.3.0
 
@@ -15,7 +15,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately on April 15th at approximately `14:00 UTC` at height `53727500`;
+The upgrade will take place approximately on April 16th at approximately `14:00 UTC` at height `53830000`;
 
 ## Chain-id will remain the same
 
@@ -141,7 +141,7 @@ Make sure Neutron v10.3.0 is installed by either downloading a [compatible binar
 Run Neutron v10.2.0 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v10.3.0" NEEDED at height: 53727500: upgrade to v10.3.0 and applying upgrade "v10.3.0" at height: 53727500
+ERR UPGRADE "v10.3.0" NEEDED at height: 53830000: upgrade to v10.3.0 and applying upgrade "v10.3.0" at height: 53830000
 ```
 
 Stop the node, and switch the binary to **Neutron v10.3.0** and re-start by `neutrond start`.
@@ -231,7 +231,7 @@ During the network upgrade, core Neutron team will be keeping an ever vigilant e
 
 Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v10.2.0 binary using the following command:
 
-> neutrond start --unsafe-skip-upgrade 53727500
+> neutrond start --unsafe-skip-upgrade 53830000
 
 Note: There is no particular need to restore a state snapshot prior to the upgrade height, unless specifically directed by core Neutron team.
 
