@@ -13,6 +13,8 @@ order: 2
 
 This document describes the steps for validators and full node operators, to upgrade successfully to the Neutron v11.0.0 release. For more details on the release, please see the [release notes](https://github.com/neutron-org/neutron/releases/tag/v11.0.0).
 
+> Hadron Labs' engagement by the Neutron Foundation for core development / maintenance of the Neutron network will expire on 30 June 2026. To help ensure long-term stability of the network, we recommend adopting the new binary documented here. This new binary introduces changes to network governance and tokenomics and is designed to increase overall resilience. Because the on-chain token voting mechanism has failed to reach quorum since 1 April 2026, the upgrade height was submitted on-chain via the privileged multisig previously elected by the DAO rather than by a traditional upgrade proposal. At this height, you may opt to either continue running the previous binary (which is likely to start malfunctioning in the near future, and already fails to provide validator payments); or upgrade to the provided binary which should ultimately improve long-term stability. We strongly recommend upgrading to the new binary.
+
 ## Upgrade date
 
 The upgrade will take place approximately on May 13th at approximately `15:00 UTC` at height `56277000`;
