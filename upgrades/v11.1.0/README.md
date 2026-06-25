@@ -7,7 +7,7 @@ order: 2
 
 # Neutron v11.1.0 Upgrade, Instructions
 
-- Chain upgrade point: `June 30th 2026, 15:00 UTC (approximately)`, at height `56277000`;
+- Chain upgrade point: `June 30th 2026, 15:00 UTC (approximately)`, at height `60489000`;
 - Go version: `v1.24.10`
 - Release: https://github.com/neutron-org/neutron/releases/tag/v11.1.0
 
@@ -15,7 +15,7 @@ This document describes the steps for validators and full node operators, to upg
 
 ## Upgrade date
 
-The upgrade will take place approximately on June 30th at approximately `15:00 UTC` at height `56277000`;
+The upgrade will take place approximately on June 30th at approximately `15:00 UTC` at height `60489000`;
 
 ## Chain-id will remain the same
 
@@ -84,12 +84,12 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 ```shell
    $ neutrond version --long
     build_tags: netgo,ledger,pebbledb
-    commit: ec10e853c7f5a8ea3b5002d96153d605f1ff3bdd
+    commit: c8c561170bbd0fe1c2f729c0f17fa280c731b1d8
     cosmos_sdk_version: v0.53.4-neutron
     go: go version go1.24.10 linux/amd64
     name: neutron
     server_name: neutrond
-    version: 11.0.0
+    version: 11.1.0
    ...
 ```
 
@@ -97,7 +97,7 @@ If you prefer to use Cosmovisor to upgrade, some preparation work is needed befo
 
 ```shell
 $ shasum -a 256 neutrond-linux-amd64
-0b2bad6c42c0445bd420810b7628c1795919186ee2a3ade67d1305942169a531  neutrond-linux-amd64
+0e04ff7d1df8d39b9b33d0ae569fd8ffa19a1cd5968ecf7dab0e1bc437694472  neutrond-linux-amd64
 ```
 
 
@@ -107,9 +107,9 @@ You can check the version you are currently using by running the following comma
 ```
 $ neutrond q wasm libwasmvm-version
 
-3.0.3
+3.0.7
 ```
-The proper version is `3.0.3`.
+The proper version is `3.0.7`.
 
 **If the version on your machine is different you MUST change it immediately!**
 
@@ -131,7 +131,7 @@ $ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/lib/
 3. check that libwasmvm version is correct:
 ```
 $ neutrond q wasm libwasmvm-version
-3.0.3
+3.0.7
 ```
 
 ### Method I: Manual Upgrade
@@ -141,7 +141,7 @@ Make sure Neutron v11.1.0 is installed by either downloading a [compatible binar
 Run Neutron v11.0.0 till upgrade height, the node will panic:
 
 ```shell
-ERR UPGRADE "v11.1.0" NEEDED at height: 56277000: upgrade to v11.1.0 and applying upgrade "v11.1.0" at height: 56277000
+ERR UPGRADE "v11.1.0" NEEDED at height: 60489000: upgrade to v11.1.0 and applying upgrade "v11.1.0" at height: 60489000
 ```
 
 Stop the node, and switch the binary to **Neutron v11.1.0** and re-start by `neutrond start`.
@@ -231,7 +231,7 @@ During the network upgrade, core Neutron team will be keeping an ever vigilant e
 
 Steps to skip this upgrade proposal are simply to resume the neutron-1 network with the (downgraded) v11.0.0 binary using the following command:
 
-> neutrond start --unsafe-skip-upgrade 56277000
+> neutrond start --unsafe-skip-upgrade 60489000
 
 Note: There is no particular need to restore a state snapshot prior to the upgrade height, unless specifically directed by core Neutron team.
 
