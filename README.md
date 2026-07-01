@@ -1,8 +1,19 @@
 # `neutron-1`
 
-The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub network as provider chain.
+## ⚠️ Project Status: Archived & Maintenance Mode
 
+The neutron repository has been officially archived and placed into long-term maintenance mode. 
+
+* **Security Updates**: The development team is no longer actively monitoring this codebase or tracking security vulnerabilities. 
+* **Future Development**: The community is highly encouraged to fork this repository to implement custom improvements, bug fixes, or continued development.
+
+Thank you to everyone who contributed to the project!
+
+## Overview
+ 
 **⚠️ If you have not used key assignment for your consumer node yet, please wait until Neutron is live and receiving valset updates from the Hub before you do so.**
+
+The `neutron-1` chain will be launched as a consumer chain with Cosmos Hub network as provider chain.
 
 ## Upgrades history
 
